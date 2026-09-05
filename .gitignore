@@ -11,6 +11,7 @@ secrets/
 
 # downloaded at build time — do not commit
 public/fonts/
+public/images/icons/
 
 # dependencies
 node_modules/
