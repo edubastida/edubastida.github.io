@@ -1,0 +1,56 @@
+
+.project-screens {
+  position: relative;
+  z-index: 10;
+  background: var(--bg-card);
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+.project-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.project-shot[hidden] { display: none; }
+.shot-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 20px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.shot-controls button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+.shot-controls button:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--accent);
+}
+.shot-counter {
+  min-width: 48px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+.shot-controls button:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.project-footer { flex-wrap: wrap; gap: 12px; }
+.itch-link { font-size: 0.875rem; padding: 10px 16px; }

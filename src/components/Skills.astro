@@ -29,7 +29,7 @@ const { section, categories } = skillsData;
                         : skill.icon
                     )}
                     alt={skill.name}
-                    class="skill-icon"
+                    class:list={["skill-icon", { "monochrome-icon": !skill.icon.startsWith("devicon:") }]}
                     loading="lazy"
                     width="36"
                     height="36"
@@ -47,7 +47,7 @@ const { section, categories } = skillsData;
 </section>
 
 <style>
-  /* ── Category cards ──────────────────────────────── */
+  /* â”€â”€ Category cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .skills-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
@@ -66,10 +66,10 @@ const { section, categories } = skillsData;
     margin-bottom: 1.25rem;
   }
 
-  /* ── Skill grid ──────────────────────────────────── */
+  /* â”€â”€ Skill grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   .skill-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
     gap: 1rem 0.6rem;
   }
 
@@ -85,7 +85,7 @@ const { section, categories } = skillsData;
     transform: translateY(-3px) scale(1.06);
   }
 
-  /* ── Icon tile — neutral bg so all icons are visible ─ */
+  /* â”€â”€ Icon tile â€” neutral bg so all icons are visible â”€ */
   .icon-tile {
     display: flex;
     align-items: center;
@@ -93,11 +93,12 @@ const { section, categories } = skillsData;
     width: 52px;
     height: 52px;
     border-radius: 0.6rem;
-    background: rgba(248, 250, 252, 0.92);
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.16);
     transition: background 0.2s ease, box-shadow 0.2s ease;
   }
   .skill-item:hover .icon-tile {
-    background: rgba(255, 255, 255, 1);
+    background: rgba(56, 189, 248, 0.12);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   }
 
@@ -107,10 +108,14 @@ const { section, categories } = skillsData;
     object-fit: contain;
   }
 
+  .monochrome-icon {
+    filter: invert(1);
+  }
+
   .skill-name {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    color: #64748b;
+    color: var(--text-muted);
     line-height: 1.2;
     transition: color 0.2s ease;
   }
@@ -118,7 +123,10 @@ const { section, categories } = skillsData;
     color: #94a3b8;
   }
 
-  /* ── Light theme ─────────────────────────────────── */
+  /* â”€â”€ Light theme â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  :global([data-theme='light']) .monochrome-icon {
+    filter: none;
+  }
   :global([data-theme='light']) .icon-tile {
     background: rgba(226, 232, 240, 0.8);
   }
@@ -132,9 +140,9 @@ const { section, categories } = skillsData;
   :global([data-theme='light']) .skill-name { color: var(--text-muted); }
   :global([data-theme='light']) .skill-item:hover .skill-name { color: var(--accent); }
 
-  /* ── Responsive ──────────────────────────────────── */
+  /* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   @media (max-width: 480px) {
-    .skill-grid { grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); }
+    .skill-grid { grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); }
   }
 </style>
 

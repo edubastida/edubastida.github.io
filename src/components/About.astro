@@ -13,9 +13,15 @@ import personalData from '../data/personal.json';
       </div>
 
       <div class="card reveal" style="transition-delay: 0.15s;">
-        <p class="text-lg text-slate-300 leading-relaxed">
-          {personalData.aboutLong}
-        </p>
+        <div class="space-y-5 text-lg text-slate-300 leading-relaxed">
+          {personalData.aboutLong.split('\n\n').map((paragraph) => (
+            <p>
+              {paragraph.split('**').map((part, index) =>
+                index % 2 === 1 ? <strong>{part}</strong> : part
+              )}
+            </p>
+          ))}
+        </div>
 
         <hr class="gradient-divider my-8" />
 
@@ -75,54 +81,30 @@ import personalData from '../data/personal.json';
             </div>
           </div>
 
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5"
-            >
-              <svg
-                class="w-5 h-5 text-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+          <div class="background-panel">
+            <div class="background-column">
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 4v8h8" /></svg>Experience</h3>
+              <ul>
+                {personalData.experienceEntries.map((entry) => (
+                  <li>
+                    <p>{entry.role}</p>
+                    <p>{entry.place}</p>
+                    <p>{entry.dates}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div>
-              <h3 class="text-white font-semibold mb-1">Experience</h3>
-              <p class="text-slate-400 text-sm">
-                {personalData.yearsExperience} Years of Experience
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div
-              class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 mt-0.5"
-            >
-              <svg
-                class="w-5 h-5 text-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <h3 class="text-white font-semibold mb-1">Education</h3>
-              <p class="text-slate-400 text-sm">{personalData.education}</p>
+            <div class="background-column">
+              <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>Education</h3>
+              <ul>
+                {personalData.educationEntries.map((entry) => (
+                  <li>
+                    <p>{entry.course}</p>
+                    <p>{entry.place}</p>
+                    <p>{entry.dates}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -206,3 +188,41 @@ import personalData from '../data/personal.json';
     io.observe(el);
   });
 </script>
+
+<style>
+  .background-panel {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #94a3b8;
+  }
+  .background-column { min-width: 0; }
+  .background-column h3 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 0.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .background-column svg {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 0.5rem;
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .background-column ul { padding: 0 0 0 3.5rem; margin: 0; list-style: none; }
+  .background-column li + li { margin-top: 1rem; }
+  .background-column p { margin: 0; }
+  .background-column li p:first-child { color: #cbd5e1; font-weight: 500; }
+  @media (max-width: 767px) {
+    .background-panel { grid-template-columns: 1fr; }
+  }
+</style>

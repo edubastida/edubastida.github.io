@@ -1,5 +1,6 @@
 ---
 import projectsFile from '../data/projects.json';
+import '../styles/project-gallery.css';
 import { augmentProjectsWithImages, type ProjectEntry } from '../lib/fetchGitHub';
 import { withBase } from '../lib/assetPath';
 
@@ -59,7 +60,7 @@ const projectsJson = JSON.stringify(
 
     <div
       id="projects-grid"
-      class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      class:list={["mx-auto grid gap-6", displayProjects.length === 1 ? "max-w-4xl grid-cols-1" : "max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3"]}
     >
       {
         displayProjects.map((project, i) => (
@@ -69,9 +70,7 @@ const projectsJson = JSON.stringify(
             data-featured={(project as any).featured ? 'true' : 'false'}
             data-index={i}
             style={`transition-delay: ${(i % 3) * 0.07}s;`}
-            role="button"
-            tabindex="0"
-            aria-label={`Open details for ${project.title}`}
+
           >
             {(project as any).colorIcon && (
               <div class="float-icon-wrap" aria-hidden="true">
@@ -103,6 +102,20 @@ const projectsJson = JSON.stringify(
                 </div>
               )}
 
+              {project.images && project.images.length > 0 && (
+                <div class="project-screens">
+                  {project.images.map((src, index) => (
+                    <img class="project-shot" src={withBase(src)} alt={`${project.title} — Gameplay ${index + 1}`} hidden={index !== 0} loading={index === 0 ? "eager" : "lazy"} width="1280" height="720" />
+                  ))}
+                  {project.images.length > 1 && (
+                    <div class="shot-controls">
+                      <button type="button" data-shot-step="-1" aria-label="Previous screenshot">‹</button>
+                      <span class="shot-counter" aria-live="polite">1 / {project.images.length}</span>
+                      <button type="button" data-shot-step="1" aria-label="Next screenshot">›</button>
+                    </div>
+                  )}
+                </div>
+              )}
               <div class="card-glow" aria-hidden="true" />
 
               <div class="p-5 flex flex-col flex-1 relative z-10">
@@ -141,8 +154,8 @@ const projectsJson = JSON.stringify(
                     />
                   </div>
                 )}
-                <span class="view-hint">
-                  <span class="view-hint-text">Click for link to project</span>
+                <button type="button" class="view-hint" aria-label={`Open details for ${project.title}`}>
+                  <span class="view-hint-text">View screenshots</span>
                   <svg
                     class="view-hint-arrow"
                     fill="none"
@@ -156,7 +169,8 @@ const projectsJson = JSON.stringify(
                       d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                     />
                   </svg>
-                </span>
+                </button>
+                {project.link && <a class="btn-primary itch-link" href={project.link} target="_blank" rel="noopener noreferrer">View on itch.io ↗</a>}
               </div>
             </div>
           </div>
@@ -369,11 +383,26 @@ const projectsJson = JSON.stringify(
     }, 280);
   }
 
+  document.querySelectorAll('.project-screens').forEach((gallery) => {
+    const shots = [...gallery.querySelectorAll('.project-shot')];
+    let current = 0;
+    gallery.querySelectorAll('[data-shot-step]').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        current = (current + Number(button.dataset.shotStep) + shots.length) % shots.length;
+        shots.forEach((shot, index) => { shot.hidden = index !== current; });
+        gallery.querySelector('.shot-counter').textContent = `${current + 1} / ${shots.length}`;
+      });
+    });
+  });
+
   cards.forEach((card) => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      if (e.target instanceof Element && e.target.closest('a')) return;
       openModal(parseInt(card.dataset.index, 10));
     });
     card.addEventListener('keydown', (e) => {
+      if (e.target instanceof Element && e.target.closest('a, button')) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openModal(parseInt(card.dataset.index, 10));

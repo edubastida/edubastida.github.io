@@ -19,7 +19,7 @@ const inProgressCerts = certsData.filter(c => c.status !== 'Earned');
       <p class="resume-title">{personal.title}</p>
     </div>
     <div class="header-right">
-      <div>{personal.email} · {personal.phone}</div>
+      {(personal.email || personal.phone) && <div>{[personal.email, personal.phone].filter(Boolean).join(" · ")}</div>}
       <div>{personal.location}</div>
       <div>linkedin.com/in/{personal.linkedin} · github.com/{personal.github}</div>
     </div>

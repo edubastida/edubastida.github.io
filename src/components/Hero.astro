@@ -85,11 +85,26 @@ const hasPortrait =
       class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen lg:min-h-0 lg:py-32"
     >
       <div class="order-2 lg:order-1 space-y-6 relative">
+
         <p class="text-sm font-semibold tracking-widest text-highlight uppercase reveal">
           Welcome to my portfolio
         </p>
 
-        <div class="reveal text-backdrop" style="transition-delay: 0.1s;">
+        <div class="reveal text-backdrop presentation-card" style="transition-delay: 0.1s;">
+        {hasPortrait && (
+          <div
+            class="portrait-wrapper"
+          >
+            <img
+              src={withBase(personalData.photo)}
+              alt={personalData.photoAlt ?? ''}
+              class="portrait-img"
+              loading="eager"
+              width="340"
+              height="425"
+            />
+          </div>
+        )}
           <h1 class="font-bold leading-tight" style="font-size: clamp(2.5rem, 5vw, 4.5rem);">
             Hi, I'm<br />
             <span class="gradient-text">{personalData.name}</span>
@@ -117,10 +132,11 @@ const hasPortrait =
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 0.3s;">
-          <a href="#contact" class="btn-primary text-center">Get In Touch</a>
+          <a href="#contact" class="btn-primary text-center">Contact Me</a>
           {hasCv ? (
             <a
-              href={cvHref}
+              href={withBase(cvHref)}
+              download
               target="_blank"
               rel="noopener noreferrer"
               class="btn-secondary text-center">Download CV</a>
@@ -144,22 +160,7 @@ const hasPortrait =
             ))
           }
         </div>
-        {hasPortrait && (
-          <div
-            class="portrait-peek-wrapper reveal"
-            aria-hidden="true"
-            style="transition-delay: 0.65s;"
-          >
-            <img
-              src={withBase(personalData.photo)}
-              alt={personalData.photoAlt ?? ''}
-              class="portrait-peek-img"
-              loading="lazy"
-              width="280"
-              height="350"
-            />
-          </div>
-        )}
+
       </div>
 
       <div
@@ -787,202 +788,40 @@ const hasPortrait =
     display: block;
   }
 
-  .portrait-peek-wrapper {
-    display: none;
+  .presentation-card {
+    position: relative;
+  }
+
+  .portrait-wrapper {
     position: absolute;
-    right: -25px;
-    top: -4.5%;
-    pointer-events: none;
+    top: 16px;
+    right: 16px;
+    width: clamp(56px, 6vw, 104px);
+    height: clamp(56px, 6vw, 104px);
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--neon));
+    box-shadow: 0 8px 28px rgba(99, 102, 241, 0.2);
+    overflow: hidden;
   }
 
-  .portrait-peek-wrapper {
+  @media (min-width: 1280px) {
+    .portrait-wrapper {
+      --portrait-size: clamp(150px, 12vw, 200px);
+      width: var(--portrait-size);
+      height: var(--portrait-size);
+      top: calc(48px - var(--portrait-size) / 2);
+      right: calc(68px - var(--portrait-size) / 2);
+    }
+  }
+
+  .portrait-img {
     display: block;
-    z-index: 2;
-    right: -4rem;
-  }
-  .portrait-peek-img {
-    animation: none;
-  }
-
-  .portrait-peek-img {
-    display: block;
-    width: 280px;
-    height: auto;
-    transform: translateY(0);
-    animation-delay:5s;
-    pointer-events:auto;
-    filter:drop-shadow(0px 0px 0px 0px rgba(0,0,0,0));
-    transition:filter .5s ease-out
-  }
-
-  .portrait-peek-img:hover {
-    filter:drop-shadow(0px 14px 28px rgba(0,0,0,.65)) drop-shadow(0px 10px 10px rgba(0,0,0,.4))
-  }
-
-  @media (min-width: 1280px) and (max-width: 1535px) {
-    .text-backdrop {
-      width: 125%;
-    }
-    .portrait-peek-img {
-      transform: scale(0.8);
-    }
-    .portrait-peek-wrapper {
-      right: calc(-25% + -25px);
-    }
-  }
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    .portrait-peek-img {
-      top: -8.5%;
-      right: -70px;
-      transform: translateY(0) scale(0.58);
-      animation-delay: 1s;
-      animation: portrait-peek-mobile-horizontal 20s ease-in-out infinite;
-    }
-    .portrait-peek-wrapper {
-      z-index: 1;
-    }
-  }
-
-  @media (min-width: 501px) and (max-width: 1023px) {
-    .portrait-peek-img {
-      transform: scale(0.7);
-    }
-    .portrait-peek-wrapper {
-      top: -10%;
-      right: -25px;
-      transform: scaleX(-1);
-    }
-  }
-
-  @media (min-width: 440px) and (max-width: 500px) {
-    .portrait-peek-wrapper {
-      top: -8.5%;
-      right: -15%;
-      transform: scaleX(-1);
-    }
-    .portrait-peek-img {
-      transform: scale(0.5);
-    }
-  }
-
-  @media (min-width: 400px) and (max-width: 439px) {
-    .portrait-peek-wrapper {
-      top: -8.5%;
-      right: -25%;
-      transform: scaleX(-1);
-    }
-    .portrait-peek-img {
-      transform: scale(0.45);
-    }
-  }
-
-  @media (max-width: 399px) {
-    .portrait-peek-wrapper {
-      display: none;
-    }
-  }
-
-  @keyframes portrait-peek-mobile {
-    0% {
-      transform: translate(0) rotate(0);
-    }
-    10% {
-      transform: translate(145px) rotate(0);
-    }
-    26% {
-      transform: translate(145px) rotate(12deg);
-    }
-    45% {
-      transform: translate(155px) rotate(20deg);
-    }
-    58% {
-      transform: translate(140px) rotate(20deg);
-    }
-    80%,
-    100% {
-      transform: translate(0) rotate(0);
-    }
-  }
-
-  @keyframes portrait-peek-mobile-horizontal {
-    0% {
-      transform: translate(0) rotate(0) scale(0.58);
-    }
-    10% {
-      transform: translate(100px) rotate(0) scale(0.58);
-    }
-    26% {
-      transform: translate(115px) rotate(12deg) scale(0.58);
-    }
-    45% {
-      transform: translate(134px) rotate(25deg) scale(0.6);
-    }
-    55% {
-      transform: translate(100px) rotate(20deg) scale(0.58);
-    }
-    70%,
-    100% {
-      transform: translate(0) rotate(0) scale(0.58);
-    }
-  }
-
-  @keyframes portrait-peek {
-    0% {
-      transform: translateY(0) rotate(0);
-    }
-
-    10% {
-      transform: translateY(-200px) rotate(0);
-    }
-
-    15% {
-      transform: translateY(-220px) rotate(6deg);
-    }
-
-    22% {
-      transform: translateY(-220px) rotate(11deg);
-    }
-
-    30% {
-      transform: translateY(-200px) translateX(50px) rotate(20deg);
-    }
-
-    39% {
-      transform: translateY(-200px) translateX(50px) rotate(20deg);
-    }
-
-    43% {
-      transform: translateY(-180px) rotate(0);
-    }
-
-    48% {
-      transform: translateY(0) rotate(0);
-    }
-
-    55% {
-      transform: translateY(0) rotate(0);
-    }
-
-    58% {
-      transform: translateY(0) translate(180px) rotate(0);
-    }
-
-    63% {
-      transform: translateY(0) translate(180px) rotate(12deg);
-    }
-
-    69% {
-      transform: translateY(6px) translate(188px) rotate(20deg);
-    }
-
-    73% {
-      transform: translateY(6px) translate(188px) rotate(20deg);
-    }
-
-    80%,
-    100% {
-      transform: translateY(0) translate(0) rotate(0);
-    }
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 30%;
   }
 
   @media (max-width: 1023px) {

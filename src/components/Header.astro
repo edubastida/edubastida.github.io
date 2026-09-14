@@ -38,6 +38,12 @@ const external = siteData.navExternal
       </div>
 
       <div class="flex items-center gap-3">
+        <select id="language-selector" class="language-selector" aria-label="Language" translate="no">
+          <option value="en">ENG</option>
+          <option value="ca">CAT</option>
+          <option value="es">CAST</option>
+        </select>
+
         <label class="switch" aria-label="Toggle light/dark mode" title="Toggle light / dark mode">
           <span class="sun"
             ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -171,6 +177,25 @@ const external = siteData.navExternal
 </div>
 
 <style>
+  .language-selector {
+    max-width: 108px;
+    min-height: 36px;
+    padding: 0.35rem 0.4rem;
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    color: var(--text);
+    background: var(--bg);
+    font: inherit;
+    font-size: 0.8rem;
+  }
+  .language-selector:focus-visible { outline: 2px solid var(--neon); outline-offset: 3px; }
+  @media (max-width: 639px) {
+    header nav > div:first-child { gap: 0.5rem; }
+    header nav > div:first-child > a { font-size: 0.85rem; flex-shrink: 1; }
+    header nav > div:first-child > div:last-child { gap: 0.4rem; }
+    .language-selector { max-width: 86px; font-size: 0.75rem; }
+  }
+
   .cta-btn {
     align-items: center;
     padding: 0.45rem 1rem;
@@ -310,8 +335,10 @@ const external = siteData.navExternal
   }
   @media (max-width: 767px) {
     .switch {
-      position: absolute;
-      right: 15vw;
+      position: relative;
+      width: 48px;
+      transform: scale(0.65);
+      transform-origin: center;
     }
   }
 
@@ -738,7 +765,7 @@ const external = siteData.navExternal
 
   @media (min-width: 640px) and (max-width: 767px) {
     header .container .gap-3 {
-      gap: 30vw !important;
+      gap: 0.5rem !important;
     }
   }
 

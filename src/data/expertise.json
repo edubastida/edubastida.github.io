@@ -1,28 +1,28 @@
 {
   "items": [
     {
-      "key": "sysadmin",
-      "icon": "server-stack",
-      "title": "Design & Art Direction",
-      "description": "Visual identity, layout, typography, and the aesthetic decisions that make people stop and look twice. Whether print or screen, the goal is the same — work that holds up."
+      "key": "level-design",
+      "icon": "sparkles",
+      "title": "Level Design",
+      "description": "I have contributed to game projects through level design, combining creative ideas with the technical work involved in building a playable experience. I am continuing to develop these skills during my game development studies."
     },
     {
-      "key": "webdev",
+      "key": "programming",
       "icon": "code-bracket-square",
-      "title": "Web Design & Development",
-      "description": "From wireframe to deployment — building sites and apps that look considered, perform well, and give visitors exactly what they came for."
+      "title": "Game & Software Programming",
+      "description": "I have contributed programming work to team projects and worked as a developer at AdariaGroup. My studies in application development have given me a foundation in Java, SQL, HTML and CSS that I bring to new development challenges."
     },
     {
-      "key": "freelance",
-      "icon": "user-circle",
-      "title": "Creative Freelance",
-      "description": "Independent project work in photography, video, 3D, illustration, or wherever the brief leads. Direct to work with, flexible, and invested in the outcome."
-    },
-    {
-      "key": "leadership",
+      "key": "teamwork",
       "icon": "users",
-      "title": "Collaboration & Direction",
-      "description": "Working alongside teams, clients, and stakeholders to take a project from idea to shipped — clear communication, honest timelines, and work that actually gets done."
+      "title": "Team Collaboration",
+      "description": "I have worked with teams on projects, contributing to both level design and programming. I enjoy sharing ideas and learning from others, and bring initiative, responsibility and a willingness to help to the work we do together."
+    },
+    {
+      "key": "technical-support",
+      "icon": "server-stack",
+      "title": "Systems & Technical Support",
+      "description": "My background includes network systems administration studies, HelpDesk work at Escola Pia Sant Antoni and experience as a virtual reality lab technician. These experiences complement my game development studies with practical IT knowledge."
     }
   ]
 }

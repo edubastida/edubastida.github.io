@@ -1,16 +1,16 @@
 {
-  "name": "Your Name Here",
+  "name": "Eduard Bastida Perez",
   "url": "https://edubastida.github.io",
-  "addressLocality": "City",
-  "addressRegion": "ST",
-  "title": "Creative Professional",
+  "addressLocality": "Barcelona",
+  "addressRegion": "Catalonia",
+  "title": "Game Developer",
   "photo": "/images/personal/portrait.png",
-  "photoAlt": "Portrait photo",
-  "email": "hello@yourdomain.com",
-  "phone": "(000) 000-0000",
-  "phoneTel": "+10000000000",
-  "location": "City, State",
-  "linkedin": "your-linkedin-handle",
+  "photoAlt": "Eduard Bastida Perez",
+  "email": "",
+  "phone": "",
+  "phoneTel": "",
+  "location": "Barcelona, Catalonia, Spain",
+  "linkedin": "eduard-bastida-p%C3%A9rez-03968b1bb",
   "github": "edubastida",
   "gitlab": "",
   "facebook": "",
@@ -27,13 +27,45 @@
   "reddit": "",
   "signal": "",
   "blog": "",
-  "cv": "",
-  "education": "Your Degree, Your University",
-  "yearsExperience": "5+",
-  "volunteer": "Role, Organization · Year–Year",
+  "cv": "/cv/Eduard-Bastida-CV.pdf",
+  "education": "Design and Development of Video Games and Serious Games, ENTI-UB (2023–present). Higher vocational studies in Multiplatform Application Development and Network Systems Administration, Salesians de Sarrià (2019–2022).",
+  "yearsExperience": "Developer at AdariaGroup (2020–2023), HelpDesk at Escola Pia Sant Antoni (2018–2019), and virtual reality lab technician (2026).",
+  "volunteer": "",
   "portfolioUrl": "",
-  "heroRole": "Designer, Developer & Creator",
-  "heroSocialLinks": ["github", "linkedin"],
-  "bio": "Designer, developer, and maker — I build things that look sharp, work smoothly, and tell a story worth remembering. Swap this for yours.",
-  "aboutLong": "A versatile creative who moves fluidly between disciplines — whether that means crafting a brand identity from scratch, writing clean production code, modeling a 3D environment, or cutting a film that actually makes people feel something. The common thread is craft: doing the work well enough that the process disappears and only the result remains. Replace this with your own story."
+  "heroRole": "Game Developer",
+  "heroSocialLinks": [
+    "github",
+    "linkedin"
+  ],
+  "bio": "I am a very enthusiastic person about new technologies. I love computer science and I am always interested in learning new things. I am hardworking and responsible.",
+  "aboutLong": "I'm a **Game Developer and Technical Artist based in Barcelona**, currently studying Design and Development of Video Games and Serious Games at ENTI-UB.\n\nI specialize in **Unreal Engine**, working across gameplay programming, systems development and technical art. I enjoy building robust gameplay systems and bridging programming and visuals through tools such as **Blueprints, C++, Niagara and Unreal's Material Editor**.\n\nI'm especially interested in **gameplay programming, technical art and systems-driven development**, and I'm always looking for new challenges where I can combine technical problem-solving with creative development.",
+  "experienceEntries": [
+    {
+      "place": "Virtual reality laboratory",
+      "role": "Lab Technician",
+      "dates": "2026"
+    },
+    {
+      "place": "AdariaGroup",
+      "role": "Developer",
+      "dates": "2020–2023"
+    },
+    {
+      "place": "Escola Pia Sant Antoni",
+      "role": "HelpDesk",
+      "dates": "2018–2019"
+    }
+  ],
+  "educationEntries": [
+    {
+      "place": "ENTI-UB",
+      "course": "Design and Development of Video Games and Serious Games",
+      "dates": "2023–present"
+    },
+    {
+      "place": "Salesians de Sarrià",
+      "course": "Higher vocational studies in Multiplatform Application Development and Network Systems Administration",
+      "dates": "2019–2022"
+    }
+  ]
 }

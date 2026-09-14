@@ -1,0 +1,622 @@
+{
+  "About": {
+    "ca": "Sobre mi",
+    "es": "Sobre mí"
+  },
+  "About Me": {
+    "ca": "Sobre mi",
+    "es": "Sobre mí"
+  },
+  "Expertise": {
+    "ca": "Especialitats",
+    "es": "Especialidades"
+  },
+  "Skills": {
+    "ca": "Habilitats",
+    "es": "Habilidades"
+  },
+  "Projects": {
+    "ca": "Projectes",
+    "es": "Proyectos"
+  },
+  "Contact": {
+    "ca": "Contacte",
+    "es": "Contacto"
+  },
+  "Contact Me": {
+    "ca": "Contacta amb mi",
+    "es": "Contacta conmigo"
+  },
+  "Contact me": {
+    "ca": "Contacta amb mi",
+    "es": "Contacta conmigo"
+  },
+  "Welcome to my portfolio": {
+    "ca": "Benvingut al meu portafolis",
+    "es": "Bienvenido a mi portfolio"
+  },
+  "Hi, I'm": {
+    "ca": "Hola, soc",
+    "es": "Hola, soy"
+  },
+  "Game Developer": {
+    "ca": "Desenvolupador de videojocs",
+    "es": "Desarrollador de videojuegos"
+  },
+  "Download CV": {
+    "ca": "Descarrega el CV",
+    "es": "Descargar CV"
+  },
+  "Get to know me": {
+    "ca": "Coneix-me",
+    "es": "Conóceme"
+  },
+  "Role": {
+    "ca": "Perfil",
+    "es": "Perfil"
+  },
+  "Location": {
+    "ca": "Ubicació",
+    "es": "Ubicación"
+  },
+  "Barcelona, Catalonia, Spain": {
+    "ca": "Barcelona, Catalunya, Espanya",
+    "es": "Barcelona, Cataluña, España"
+  },
+  "Experience": {
+    "ca": "Experiència",
+    "es": "Experiencia"
+  },
+  "Education": {
+    "ca": "Formació",
+    "es": "Formación"
+  },
+  "Lab Technician": {
+    "ca": "Tècnic de laboratori",
+    "es": "Técnico de laboratorio"
+  },
+  "Virtual reality laboratory": {
+    "ca": "Laboratori de realitat virtual",
+    "es": "Laboratorio de realidad virtual"
+  },
+  "Developer": {
+    "ca": "Desenvolupador",
+    "es": "Desarrollador"
+  },
+  "HelpDesk": {
+    "ca": "Suport tècnic",
+    "es": "Soporte técnico"
+  },
+  "2023–present": {
+    "ca": "2023–actualitat",
+    "es": "2023–actualidad"
+  },
+  "Design and Development of Video Games and Serious Games": {
+    "ca": "Disseny i Desenvolupament de Videojocs i Jocs Aplicats",
+    "es": "Diseño y Desarrollo de Videojuegos y Juegos Aplicados"
+  },
+  "Higher vocational studies in Multiplatform Application Development and Network Systems Administration": {
+    "ca": "Formació professional superior en Desenvolupament d'Aplicacions Multiplataforma i Administració de Sistemes Informàtics en Xarxa",
+    "es": "Formación profesional superior en Desarrollo de Aplicaciones Multiplataforma y Administración de Sistemas Informáticos en Red"
+  },
+  "I'm a": {
+    "ca": "Soc",
+    "es": "Soy"
+  },
+  "Game Developer and Technical Artist based in Barcelona": {
+    "ca": "desenvolupador de videojocs i artista tècnic establert a Barcelona",
+    "es": "desarrollador de videojuegos y artista técnico afincado en Barcelona"
+  },
+  ", currently studying Design and Development of Video Games and Serious Games at ENTI-UB.": {
+    "ca": ", i actualment estudio Disseny i Desenvolupament de Videojocs i Jocs Aplicats a ENTI-UB.",
+    "es": ", y actualmente estudio Diseño y Desarrollo de Videojuegos y Juegos Aplicados en ENTI-UB."
+  },
+  "I specialize in": {
+    "ca": "M'especialitzo en",
+    "es": "Me especializo en"
+  },
+  ", working across gameplay programming, systems development and technical art. I enjoy building robust gameplay systems and bridging programming and visuals through tools such as": {
+    "ca": ", treballant en programació de mecàniques de joc, desenvolupament de sistemes i art tècnic. M'agrada crear sistemes de joc robustos i connectar la programació amb els elements visuals mitjançant eines com",
+    "es": ", trabajando en programación de mecánicas de juego, desarrollo de sistemas y arte técnico. Me gusta crear sistemas de juego robustos y conectar la programación con los elementos visuales mediante herramientas como"
+  },
+  "Blueprints, C++, Niagara and Unreal's Material Editor": {
+    "ca": "Blueprints, C++, Niagara i l'editor de materials d'Unreal",
+    "es": "Blueprints, C++, Niagara y el editor de materiales de Unreal"
+  },
+  "I'm especially interested in": {
+    "ca": "M'interessen especialment",
+    "es": "Me interesan especialmente"
+  },
+  "gameplay programming, technical art and systems-driven development": {
+    "ca": "la programació de mecàniques de joc, l'art tècnic i el desenvolupament basat en sistemes",
+    "es": "la programación de mecánicas de juego, el arte técnico y el desarrollo basado en sistemas"
+  },
+  ", and I'm always looking for new challenges where I can combine technical problem-solving with creative development.": {
+    "ca": ", i sempre busco nous reptes on pugui combinar la resolució de problemes tècnics amb el desenvolupament creatiu.",
+    "es": ", y siempre busco nuevos retos donde pueda combinar la resolución de problemas técnicos con el desarrollo creativo."
+  },
+  "What I do": {
+    "ca": "Què faig",
+    "es": "Qué hago"
+  },
+  "Level Design": {
+    "ca": "Disseny de nivells",
+    "es": "Diseño de niveles"
+  },
+  "Game & Software Programming": {
+    "ca": "Programació de videojocs i programari",
+    "es": "Programación de videojuegos y software"
+  },
+  "Team Collaboration": {
+    "ca": "Col·laboració en equip",
+    "es": "Colaboración en equipo"
+  },
+  "Systems & Technical Support": {
+    "ca": "Sistemes i suport tècnic",
+    "es": "Sistemas y soporte técnico"
+  },
+  "What I work with": {
+    "ca": "Eines que utilitzo",
+    "es": "Herramientas que utilizo"
+  },
+  "Tools & Skills": {
+    "ca": "Eines i habilitats",
+    "es": "Herramientas y habilidades"
+  },
+  "Game Development": {
+    "ca": "Desenvolupament de videojocs",
+    "es": "Desarrollo de videojuegos"
+  },
+  "Programming": {
+    "ca": "Programació",
+    "es": "Programación"
+  },
+  "3D, Video & Design": {
+    "ca": "3D, vídeo i disseny",
+    "es": "3D, vídeo y diseño"
+  },
+  "Dev & Workflow Tools": {
+    "ca": "Eines de desenvolupament i treball",
+    "es": "Herramientas de desarrollo y trabajo"
+  },
+  "Databases": {
+    "ca": "Bases de dades",
+    "es": "Bases de datos"
+  },
+  "SQL / Databases": {
+    "ca": "SQL / Bases de dades",
+    "es": "SQL / Bases de datos"
+  },
+  "My work": {
+    "ca": "La meva feina",
+    "es": "Mi trabajo"
+  },
+  "Featured Projects": {
+    "ca": "Projectes destacats",
+    "es": "Proyectos destacados"
+  },
+  "Featured": {
+    "ca": "Destacats",
+    "es": "Destacados"
+  },
+  "All": {
+    "ca": "Tots",
+    "es": "Todos"
+  },
+  "Webdev": {
+    "ca": "Desenvolupament web",
+    "es": "Desarrollo web"
+  },
+  "Appdev": {
+    "ca": "Desenvolupament d'aplicacions",
+    "es": "Desarrollo de aplicaciones"
+  },
+  "Design": {
+    "ca": "Disseny",
+    "es": "Diseño"
+  },
+  "webdev": {
+    "ca": "desenvolupament web",
+    "es": "desarrollo web"
+  },
+  "appdev": {
+    "ca": "desenvolupament d'aplicacions",
+    "es": "desarrollo de aplicaciones"
+  },
+  "design": {
+    "ca": "disseny",
+    "es": "diseño"
+  },
+  "Community": {
+    "ca": "Comunitat",
+    "es": "Comunidad"
+  },
+  "Personal Work": {
+    "ca": "Treball personal",
+    "es": "Trabajo personal"
+  },
+  "Side Project": {
+    "ca": "Projecte personal",
+    "es": "Proyecto personal"
+  },
+  "Click for link to project": {
+    "ca": "Fes clic per veure el projecte",
+    "es": "Haz clic para ver el proyecto"
+  },
+  "View Project": {
+    "ca": "Veure el projecte",
+    "es": "Ver proyecto"
+  },
+  "Private / No public link available.": {
+    "ca": "Privat / Sense enllaç públic disponible.",
+    "es": "Privado / Sin enlace público disponible."
+  },
+  "No projects in this category yet.": {
+    "ca": "Encara no hi ha projectes en aquesta categoria.",
+    "es": "Todavía no hay proyectos en esta categoría."
+  },
+  "Let's talk.": {
+    "ca": "Parlem.",
+    "es": "Hablemos."
+  },
+  "Where Else You Can Find Me:": {
+    "ca": "També em pots trobar a:",
+    "es": "También puedes encontrarme en:"
+  },
+  "Name": {
+    "ca": "Nom",
+    "es": "Nombre"
+  },
+  "Email": {
+    "ca": "Correu electrònic",
+    "es": "Correo electrónico"
+  },
+  "Subject": {
+    "ca": "Assumpte",
+    "es": "Asunto"
+  },
+  "Message": {
+    "ca": "Missatge",
+    "es": "Mensaje"
+  },
+  "Send Message": {
+    "ca": "Envia el missatge",
+    "es": "Enviar mensaje"
+  },
+  "Sending…": {
+    "ca": "Enviant…",
+    "es": "Enviando…"
+  },
+  "My name…": {
+    "ca": "El meu nom…",
+    "es": "Mi nombre…"
+  },
+  "Let us know…": {
+    "ca": "Explica-m'ho…",
+    "es": "Cuéntamelo…"
+  },
+  "What would you like to tell us?": {
+    "ca": "Què t'agradaria explicar-me?",
+    "es": "¿Qué te gustaría contarme?"
+  },
+  "Privacy": {
+    "ca": "Privacitat",
+    "es": "Privacidad"
+  },
+  "Terms": {
+    "ca": "Condicions",
+    "es": "Condiciones"
+  },
+  "Open menu": {
+    "ca": "Obre el menú",
+    "es": "Abrir menú"
+  },
+  "Close menu": {
+    "ca": "Tanca el menú",
+    "es": "Cerrar menú"
+  },
+  "Close": {
+    "ca": "Tanca",
+    "es": "Cerrar"
+  },
+  "Fullscreen": {
+    "ca": "Pantalla completa",
+    "es": "Pantalla completa"
+  },
+  "Minimize": {
+    "ca": "Minimitza",
+    "es": "Minimizar"
+  },
+  "Previous project": {
+    "ca": "Projecte anterior",
+    "es": "Proyecto anterior"
+  },
+  "Next project": {
+    "ca": "Projecte següent",
+    "es": "Proyecto siguiente"
+  },
+  "Skip to main content": {
+    "ca": "Ves al contingut principal",
+    "es": "Ir al contenido principal"
+  },
+  "Footer navigation": {
+    "ca": "Navegació del peu de pàgina",
+    "es": "Navegación del pie de página"
+  },
+  "Site navigation": {
+    "ca": "Navegació del lloc",
+    "es": "Navegación del sitio"
+  },
+  "Toggle light/dark mode": {
+    "ca": "Canvia el tema clar o fosc",
+    "es": "Cambiar tema claro u oscuro"
+  },
+  "Toggle light / dark mode": {
+    "ca": "Canvia el tema clar o fosc",
+    "es": "Cambiar tema claro u oscuro"
+  },
+  "Background, experience, and approach": {
+    "ca": "Trajectòria, experiència i enfocament",
+    "es": "Trayectoria, experiencia y enfoque"
+  },
+  "What I focus on and how I work": {
+    "ca": "En què em centro i com treballo",
+    "es": "En qué me centro y cómo trabajo"
+  },
+  "Tools and technologies I use": {
+    "ca": "Eines i tecnologies que utilitzo",
+    "es": "Herramientas y tecnologías que utilizo"
+  },
+  "Personal projects and experiments": {
+    "ca": "Projectes personals i experiments",
+    "es": "Proyectos personales y experimentos"
+  },
+  "Start a project or just say hello": {
+    "ca": "Comencem un projecte o parlem",
+    "es": "Empecemos un proyecto o hablemos"
+  },
+  "Open-source work and side experiments": {
+    "ca": "Projectes de codi obert i experiments",
+    "es": "Proyectos de código abierto y experimentos"
+  },
+  "Professional profile and recommendations": {
+    "ca": "Perfil professional i recomanacions",
+    "es": "Perfil profesional y recomendaciones"
+  },
+  "Explore": {
+    "ca": "Explora",
+    "es": "Explora"
+  },
+  "External": {
+    "ca": "Enllaços externs",
+    "es": "Enlaces externos"
+  },
+  "Open Source Portfolio Template": {
+    "ca": "Plantilla de portafolis de codi obert",
+    "es": "Plantilla de portfolio de código abierto"
+  },
+  "3D Environment Study": {
+    "ca": "Estudi d'entorn 3D",
+    "es": "Estudio de entorno 3D"
+  },
+  "Personal Design System": {
+    "ca": "Sistema de disseny personal",
+    "es": "Sistema de diseño personal"
+  },
+  "Photography Workflow App": {
+    "ca": "Aplicació de gestió fotogràfica",
+    "es": "Aplicación de gestión fotográfica"
+  },
+  "Open Source": {
+    "ca": "Codi obert",
+    "es": "Código abierto"
+  },
+  "Template": {
+    "ca": "Plantilla",
+    "es": "Plantilla"
+  },
+  "3D Modeling": {
+    "ca": "Modelatge 3D",
+    "es": "Modelado 3D"
+  },
+  "Lighting": {
+    "ca": "Il·luminació",
+    "es": "Iluminación"
+  },
+  "Cycles Render": {
+    "ca": "Renderització amb Cycles",
+    "es": "Renderizado con Cycles"
+  },
+  "Design Systems": {
+    "ca": "Sistemes de disseny",
+    "es": "Sistemas de diseño"
+  },
+  "Component Library": {
+    "ca": "Biblioteca de components",
+    "es": "Biblioteca de componentes"
+  },
+  "Photography": {
+    "ca": "Fotografia",
+    "es": "Fotografía"
+  },
+  "Workflow": {
+    "ca": "Flux de treball",
+    "es": "Flujo de trabajo"
+  },
+  "Summary": {
+    "ca": "Resum",
+    "es": "Resumen"
+  },
+  "Areas of Expertise": {
+    "ca": "Àrees d'especialització",
+    "es": "Áreas de especialización"
+  },
+  "Technical Skills": {
+    "ca": "Habilitats tècniques",
+    "es": "Habilidades técnicas"
+  },
+  "Notable Projects": {
+    "ca": "Projectes destacats",
+    "es": "Proyectos destacados"
+  },
+  "Volunteer": {
+    "ca": "Voluntariat",
+    "es": "Voluntariado"
+  },
+  "Language": {
+    "ca": "Idioma",
+    "es": "Idioma"
+  },
+  "I am a very enthusiastic person about new technologies. I love computer science and I am always interested in learning new things. I am hardworking and responsible.": {
+    "ca": "Soc una persona molt entusiasta de les noves tecnologies. M'encanta la informàtica i sempre m'interessa aprendre coses noves. Soc treballador i responsable.",
+    "es": "Soy una persona muy entusiasta de las nuevas tecnologías. Me encanta la informática y siempre me interesa aprender cosas nuevas. Soy trabajador y responsable."
+  },
+  "I have contributed to game projects through level design, combining creative ideas with the technical work involved in building a playable experience. I am continuing to develop these skills during my game development studies.": {
+    "ca": "He participat en projectes de videojocs dissenyant nivells, combinant idees creatives amb el treball tècnic necessari per crear una experiència jugable. Continuo desenvolupant aquestes habilitats durant els meus estudis de videojocs.",
+    "es": "He participado en proyectos de videojuegos diseñando niveles, combinando ideas creativas con el trabajo técnico necesario para crear una experiencia jugable. Continúo desarrollando estas habilidades durante mis estudios de videojuegos."
+  },
+  "I have contributed programming work to team projects and worked as a developer at AdariaGroup. My studies in application development have given me a foundation in Java, SQL, HTML and CSS that I bring to new development challenges.": {
+    "ca": "He programat en projectes d'equip i he treballat com a desenvolupador a AdariaGroup. Els meus estudis de desenvolupament d'aplicacions m'han donat una base en Java, SQL, HTML i CSS que aplico a nous reptes de desenvolupament.",
+    "es": "He programado en proyectos de equipo y he trabajado como desarrollador en AdariaGroup. Mis estudios de desarrollo de aplicaciones me han dado una base en Java, SQL, HTML y CSS que aplico a nuevos retos de desarrollo."
+  },
+  "I have worked with teams on projects, contributing to both level design and programming. I enjoy sharing ideas and learning from others, and bring initiative, responsibility and a willingness to help to the work we do together.": {
+    "ca": "He treballat en equip en projectes, contribuint tant al disseny de nivells com a la programació. M'agrada compartir idees i aprendre dels altres, i aporto iniciativa, responsabilitat i ganes d'ajudar a la feina que fem junts.",
+    "es": "He trabajado en equipo en proyectos, contribuyendo tanto al diseño de niveles como a la programación. Me gusta compartir ideas y aprender de los demás, y aporto iniciativa, responsabilidad y ganas de ayudar al trabajo que hacemos juntos."
+  },
+  "My background includes network systems administration studies, HelpDesk work at Escola Pia Sant Antoni and experience as a virtual reality lab technician. These experiences complement my game development studies with practical IT knowledge.": {
+    "ca": "La meva trajectòria inclou estudis d'administració de sistemes en xarxa, suport tècnic a l'Escola Pia Sant Antoni i experiència com a tècnic de laboratori de realitat virtual. Aquestes experiències complementen els meus estudis de videojocs amb coneixements pràctics d'informàtica.",
+    "es": "Mi trayectoria incluye estudios de administración de sistemas en red, soporte técnico en Escola Pia Sant Antoni y experiencia como técnico de laboratorio de realidad virtual. Estas experiencias complementan mis estudios de videojuegos con conocimientos prácticos de informática."
+  },
+  "The template you're looking at right now. Built with Astro, fully data-driven, and designed to be claimed by anyone. Fork it, fill it, ship it. All placeholder content is waiting for yours.": {
+    "ca": "La plantilla que estàs veient. Creada amb Astro, basada en dades i pensada perquè qualsevol persona la pugui adaptar. Fes-ne una còpia, personalitza-la i publica-la. El contingut d'exemple espera el teu.",
+    "es": "La plantilla que estás viendo. Creada con Astro, basada en datos y pensada para que cualquiera pueda adaptarla. Cópiala, personalízala y publícala. El contenido de ejemplo espera el tuyo."
+  },
+  "A series of Blender scenes exploring lighting, texture, and atmosphere â€” no narrative, just craft. Rendered in Cycles, post-processed in Photoshop, shared as a study in patience and iteration.": {
+    "ca": "Una sèrie d'escenes de Blender que exploren la il·luminació, la textura i l'atmosfera. Renderitzades amb Cycles, retocades amb Photoshop i compartides com a estudi de paciència i iteració.",
+    "es": "Una serie de escenas de Blender que exploran la iluminación, la textura y la atmósfera. Renderizadas con Cycles, retocadas con Photoshop y compartidas como estudio de paciencia e iteración."
+  },
+  "A living component library built for personal and freelance use. Design tokens, reusable components, and documentation that travel from project to project â€” no starting from scratch every time.": {
+    "ca": "Una biblioteca de components per a ús personal i professional. Variables de disseny, components reutilitzables i documentació que passen d'un projecte a un altre, sense començar de zero cada vegada.",
+    "es": "Una biblioteca de componentes para uso personal y profesional. Variables de diseño, componentes reutilizables y documentación que pasan de un proyecto a otro, sin empezar de cero cada vez."
+  },
+  "A lightweight local web app for managing shoot intake, selects, and client delivery â€” replacing a patchwork of folders, spreadsheets, and emails with a single tool built for the way I work.": {
+    "ca": "Una aplicació web local lleugera per gestionar sessions de fotografia, seleccions i lliuraments als clients. Substitueix carpetes, fulls de càlcul i correus per una sola eina adaptada a la meva manera de treballar.",
+    "es": "Una aplicación web local ligera para gestionar sesiones de fotografía, selecciones y entregas a clientes. Sustituye carpetas, hojas de cálculo y correos por una sola herramienta adaptada a mi forma de trabajar."
+  },
+  "Go to slide 1": {
+    "ca": "Ves a la diapositiva 1",
+    "es": "Ir a la diapositiva 1"
+  },
+  "Go to slide 2": {
+    "ca": "Ves a la diapositiva 2",
+    "es": "Ir a la diapositiva 2"
+  },
+  "Go to slide 3": {
+    "ca": "Ves a la diapositiva 3",
+    "es": "Ir a la diapositiva 3"
+  },
+  "Go to slide 4": {
+    "ca": "Ves a la diapositiva 4",
+    "es": "Ir a la diapositiva 4"
+  },
+  "Open details for Open Source Portfolio Template": {
+    "ca": "Obre els detalls de Plantilla de portafolis de codi obert",
+    "es": "Abrir detalles de Plantilla de portfolio de código abierto"
+  },
+  "Open details for 3D Environment Study": {
+    "ca": "Obre els detalls de Estudi d'entorn 3D",
+    "es": "Abrir detalles de Estudio de entorno 3D"
+  },
+  "Open details for Personal Design System": {
+    "ca": "Obre els detalls de Sistema de disseny personal",
+    "es": "Abrir detalles de Sistema de diseño personal"
+  },
+  "Open details for Photography Workflow App": {
+    "ca": "Obre els detalls de Aplicació de gestió fotogràfica",
+    "es": "Abrir detalles de Aplicación de gestión fotográfica"
+  },
+  "Message sent! I'll be in touch soon.": {
+    "ca": "Missatge enviat! Et contactaré aviat.",
+    "es": "¡Mensaje enviado! Te contactaré pronto."
+  },
+  "Something went wrong. Please try again.": {
+    "ca": "Hi ha hagut un error. Torna-ho a provar.",
+    "es": "Se ha producido un error. Vuelve a intentarlo."
+  },
+  "Network error. Check your connection and try again.": {
+    "ca": "Error de xarxa. Comprova la connexió i torna-ho a provar.",
+    "es": "Error de red. Comprueba la conexión y vuelve a intentarlo."
+  },
+  "A suspense puzzle-platformer prototype built in Unreal Engine 5. Play as a puppet brought to life in a strange workshop, recover your friend's missing pieces and escape the puppeteer. I contributed to this team project as a Gameplay Programmer.": {
+    "ca": "Prototip de plataformes i trencaclosques de suspens creat amb Unreal Engine 5. Ets un titella que cobra vida en un taller estrany: recupera les peces de la teva amiga i escapa del titellaire. Vaig participar en aquest projecte d'equip com a programador de mecàniques de joc.",
+    "es": "Prototipo de plataformas y puzles de suspense creado con Unreal Engine 5. Eres una marioneta que cobra vida en un taller extraño: recupera las piezas de tu amiga y escapa del titiritero. Participé en este proyecto de equipo como programador de mecánicas de juego."
+  },
+  "Team Project · Gameplay Programmer": {
+    "ca": "Projecte d'equip · Programador de mecàniques de joc",
+    "es": "Proyecto de equipo · Programador de mecánicas de juego"
+  },
+  "games": {
+    "ca": "videojocs",
+    "es": "videojuegos"
+  },
+  "Games": {
+    "ca": "Videojocs",
+    "es": "Videojuegos"
+  },
+  "Gameplay Programming": {
+    "ca": "Programació de mecàniques de joc",
+    "es": "Programación de mecánicas de juego"
+  },
+  "Puzzle Platformer": {
+    "ca": "Plataformes i trencaclosques",
+    "es": "Plataformas y puzles"
+  },
+  "Prototype": {
+    "ca": "Prototip",
+    "es": "Prototipo"
+  },
+  "Open details for Carved": {
+    "ca": "Obre els detalls de Carved",
+    "es": "Abrir detalles de Carved"
+  },
+  "Go to slide 5": {
+    "ca": "Ves a la diapositiva 5",
+    "es": "Ir a la diapositiva 5"
+  },
+  "View on itch.io ↗": {
+    "ca": "Veure a itch.io ↗",
+    "es": "Ver en itch.io ↗"
+  },
+  "View screenshots": {
+    "ca": "Veure captures",
+    "es": "Ver capturas"
+  },
+  "View screenshot 1": {
+    "ca": "Veure captura 1",
+    "es": "Ver captura 1"
+  },
+  "View screenshot 2": {
+    "ca": "Veure captura 2",
+    "es": "Ver captura 2"
+  },
+  "View screenshot 3": {
+    "ca": "Veure captura 3",
+    "es": "Ver captura 3"
+  },
+  "View screenshot 4": {
+    "ca": "Veure captura 4",
+    "es": "Ver captura 4"
+  },
+  "View screenshot 5": {
+    "ca": "Veure captura 5",
+    "es": "Ver captura 5"
+  },
+  "Previous screenshot": {
+    "ca": "Captura anterior",
+    "es": "Captura anterior"
+  },
+  "Next screenshot": {
+    "ca": "Captura següent",
+    "es": "Captura siguiente"
+  }
+}

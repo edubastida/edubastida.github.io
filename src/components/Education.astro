@@ -1,0 +1,33 @@
+---
+import personalData from '../data/personal.json';
+---
+
+<section id="education" class="py-24" style="scroll-margin-top: 80px;">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 reveal">
+      <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">My academic background</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Education</h2>
+    </div>
+    <div class="max-w-4xl mx-auto grid gap-6">
+      {personalData.educationEntries.map((entry, i) => (
+        <article class="card reveal" style={`transition-delay: ${i * 0.1}s;`}>
+          <p class="text-sm font-semibold text-highlight mb-3">{entry.dates}</p>
+          <h3 class="text-xl sm:text-2xl font-bold mb-3">{entry.place}</h3>
+          <p class="text-slate-400 leading-relaxed">{entry.course}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('#education .reveal').forEach((el) => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        el.classList.add('visible');
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    observer.observe(el);
+  });
+</script>

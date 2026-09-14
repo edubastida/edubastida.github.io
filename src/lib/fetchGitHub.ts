@@ -158,6 +158,7 @@ function localPathFor(repoName: string, imageUrl: string): string {
 }
 
 export interface ProjectEntry {
+  images?: string[];
   title: string;
   company: string;
   category: string;
@@ -177,9 +178,12 @@ export interface ProjectEntry {
 // Both call augmentProjectsWithImages — memoizing here avoids duplicate GitHub API calls
 // and a race condition where two parallel writes could corrupt the on-disk cache.
 let _buildResult: Promise<ProjectEntry[]> | null = null;
+let _buildProjectsKey = "";
 
 export async function augmentProjectsWithImages(projects: ProjectEntry[]): Promise<ProjectEntry[]> {
-  if (_buildResult) return _buildResult;
+  const projectsKey = JSON.stringify(projects);
+  if (_buildResult && projectsKey === _buildProjectsKey) return _buildResult;
+  _buildProjectsKey = projectsKey;
   _buildResult = _doAugment(projects);
   return _buildResult;
 }
