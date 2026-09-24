@@ -10,7 +10,6 @@ const heroSocialLinks = getSocialLinks(
   personalData.heroSocialLinks
 );
 
-import { icons } from '../lib/icons';
 import { withBase } from '../lib/assetPath';
 import { existsSync, readdirSync } from 'node:fs';
 import { extname, join } from 'node:path';
@@ -171,43 +170,15 @@ const hasPortrait =
           class="project-frame-outer project-frame-sizer w-72 h-72 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px]"
         >
           <article class="project-frame" id="project-frame">
-            <div class="pf-header" id="project-frame-header">
-              <h2 class="pf-title">Featured Projects</h2>
-              <div class="pf-btn-group">
-                <button
-                  type="button"
-                  id="pf-fullscreen-btn"
-                  class="pf-btn"
-                  style="--glow-color:rgba(14,165,233,0.8);"
-                  aria-label="Fullscreen"
-                >
-                  <svg viewBox="0 0 512 512" class="pf-btn-icon" fill="currentColor">
-                    <path
-                      d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"
-                    ></path>
-                  </svg>
-                </button>
-                <button
-                  type="button"
-                  id="pf-close-btn"
-                  class="pf-btn"
-                  style="--glow-color:rgba(99,102,241,0.8);"
-                  aria-label="Minimize"
-                >
-                  <svg viewBox="0 0 384 512" class="pf-btn-icon" fill="currentColor">
-                    <path
-                      d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
+            <h2 class="featured-heading">Featured Projects</h2>
 
             <div class="pf-body">
               <div class="relative w-full h-full">
                 {
                   featuredProjects.map((project, i) => (
-                    <div
+                    <a
+                      href={'#work-' + projectsData.findIndex((p) => p.title === project.title)}
+                      tabindex={i === 0 ? 0 : -1}
                       class="hero-slide absolute inset-0 flex items-center justify-center p-3 transition-[transform,opacity] duration-700 ease-in-out"
                       data-index={i}
                       data-project-index={projectsData.findIndex((p) => p.title === project.title)}
@@ -235,7 +206,7 @@ const hasPortrait =
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </a>
                   ))
                 }
               </div>
@@ -285,35 +256,7 @@ const hasPortrait =
               </svg>
             </button>
 
-            <div class="pf-badge">
-              {
-                featuredProjects.map((project, i) => (
-                  <div
-                    class="hero-badge-icon absolute inset-0 flex items-center justify-center transition-[opacity,transform] duration-500"
-                    data-badge={i}
-                    style={
-                      i === 0 ? 'opacity:1;transform:scale(1);' : 'opacity:0;transform:scale(0.4);'
-                    }
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-6 h-6 text-highlight"
-                      set:html={icons[project.icon] ?? ''}
-                    />
-                  </div>
-                ))
-              }
-            </div>
 
-            <div class="pf-counter">
-              <span class="font-mono text-sm font-bold slider-counter" style="color: #8fa8c8;"
-                >1 / {featuredProjects.length}</span
-              >
-            </div>
           </article>
         </div>
       </div>
@@ -858,7 +801,6 @@ const hasPortrait =
 
 <script>
   const slides = Array.from(document.querySelectorAll<HTMLElement>('.hero-slide'));
-  const badges = Array.from(document.querySelectorAll<HTMLElement>('.hero-badge-icon'));
   const dots = Array.from(document.querySelectorAll<HTMLElement>('.slider-dot'));
   const counter = document.querySelector<HTMLElement>('.slider-counter');
   const total = slides.length;
@@ -882,10 +824,8 @@ const hasPortrait =
     slides[current].style.transform = 'translateX(0)';
     slides[current].style.opacity = '1';
 
-    badges[prev].style.opacity = '0';
-    badges[prev].style.transform = 'scale(0.4)';
-    badges[current].style.opacity = '1';
-    badges[current].style.transform = 'scale(1)';
+    slides[prev].tabIndex = -1;
+    slides[current].tabIndex = 0;
 
     dots.forEach((d, i) => {
       if (i === current) {
@@ -947,18 +887,11 @@ const hasPortrait =
 
   if (total > 0) resetTimer();
 
-  // Clicking a hero slide opens the matching project card modal in Projects.astro.
-  // data-project-index maps hero slides to their original index in the full projects list.
   slides.forEach((slide) => {
-    slide.addEventListener('click', (e: MouseEvent) => {
-      if ((e.target as HTMLElement).closest('button')) return;
-      const idx = (slide as HTMLElement).dataset.projectIndex;
-      // Grid layout: click opens the project modal
-      const gridCard = document.querySelector<HTMLElement>(`.project-card[data-index="${idx}"]`);
-      if (gridCard) { gridCard.click(); return; }
-      // Showcase layout: scroll to the matching feature card
-      document.querySelector<HTMLElement>(`.project-feature[data-index="${idx}"]`)
-        ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    slide.addEventListener('click', () => {
+      const idx = slide.dataset.projectIndex;
+      document.querySelector<HTMLButtonElement>('#projects [data-filter="all"]')?.click();
+      document.getElementById('work-' + idx)?.classList.add('visible');
     });
   });
 
@@ -975,107 +908,6 @@ const hasPortrait =
       { threshold: 0.1 }
     ).observe(heroSection);
   }
-
-  const projectFrame = document.getElementById('project-frame') as HTMLElement | null;
-  const pfHeader = document.getElementById('project-frame-header') as HTMLElement | null;
-  const pfFrameParent = projectFrame?.parentElement as HTMLElement | null;
-  // pfDx/pfDy: accumulated translation of the draggable project frame from its original position.
-  // pfOx/pfOy: pointer position at drag start minus pfDx/pfDy, used to compute the new offset on move.
-  let pfDx = 0,
-    pfDy = 0,
-    pfOx = 0,
-    pfOy = 0;
-
-  function pfDragStart(e: MouseEvent | TouchEvent) {
-    if ((e.target as HTMLElement).closest('button')) return;
-    e.preventDefault();
-    const t = (e as TouchEvent).touches?.[0];
-    pfOx = (t?.clientX ?? (e as MouseEvent).clientX) - pfDx;
-    pfOy = (t?.clientY ?? (e as MouseEvent).clientY) - pfDy;
-    document.addEventListener('mousemove', pfDragMove);
-    document.addEventListener('mouseup', pfDragEnd);
-    document.addEventListener('touchmove', pfDragMove as EventListener, { passive: false });
-    document.addEventListener('touchend', pfDragEnd);
-    if (pfHeader) pfHeader.style.cursor = 'grabbing';
-  }
-
-  function pfDragMove(e: MouseEvent | TouchEvent) {
-    e.preventDefault();
-    const t = (e as TouchEvent).touches?.[0];
-    pfDx = (t?.clientX ?? (e as MouseEvent).clientX) - pfOx;
-    pfDy = (t?.clientY ?? (e as MouseEvent).clientY) - pfOy;
-    if (projectFrame && !projectFrame.classList.contains('pf-fullscreen')) {
-      projectFrame.style.transform = `translate(${pfDx}px,${pfDy}px)`;
-    }
-  }
-
-  function pfDragEnd() {
-    document.removeEventListener('mousemove', pfDragMove);
-    document.removeEventListener('mouseup', pfDragEnd);
-    document.removeEventListener('touchmove', pfDragMove as EventListener);
-    document.removeEventListener('touchend', pfDragEnd);
-    if (pfHeader) pfHeader.style.cursor = 'grab';
-  }
-
-  pfHeader?.addEventListener('mousedown', pfDragStart as EventListener);
-  pfHeader?.addEventListener('touchstart', pfDragStart as EventListener, { passive: false });
-
-  const pfCloseBtn = document.getElementById('pf-close-btn');
-  const pfBody = projectFrame?.querySelector<HTMLElement>('.pf-body');
-  const pfPrev = document.getElementById('slider-prev') as HTMLElement | null;
-  const pfNext = document.getElementById('slider-next') as HTMLElement | null;
-  let pfCollapsed = false;
-
-  pfCloseBtn?.addEventListener('click', () => {
-    if (projectFrame?.classList.contains('pf-fullscreen')) {
-      exitFullscreen();
-      return;
-    }
-    pfCollapsed = !pfCollapsed;
-    if (pfBody) pfBody.style.visibility = pfCollapsed ? 'hidden' : '';
-    if (projectFrame) projectFrame.style.height = pfCollapsed ? 'calc(30px + 8px)' : '';
-    pfPrev?.classList.toggle('pf-nav-hidden', pfCollapsed);
-    pfNext?.classList.toggle('pf-nav-hidden', pfCollapsed);
-  });
-
-  const pfFullBtn = document.getElementById('pf-fullscreen-btn');
-  const pfOverlay = document.getElementById('pf-overlay');
-  const pfIconExp =
-    '<path d="M344 0H488c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512H24c-13.3 0-24-10.7-24-24V344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"/>';
-  const pfIconShrink =
-    '<path d="M439 7c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H296c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3 1.7-26.2 5.2l39 39L439 7zM72 272H216c13.3 0 24 10.7 24 24V440c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39L73 505c-9.4 9.4-24.6 9.4-33.9 0L7 473c-9.4-9.4-9.4-24.6 0-33.9l87-87L55 313c-6.9-6.9-8.9-17.2-5.2-26.2s12.5-14.8 22.2-14.8z"/>';
-
-  function exitFullscreen() {
-    if (!projectFrame) return;
-    projectFrame.classList.remove('pf-fullscreen');
-    pfOverlay?.classList.remove('pf-overlay-active');
-    const svg = pfFullBtn?.querySelector('svg');
-    if (svg) svg.innerHTML = pfIconExp;
-    if (pfFrameParent) pfFrameParent.appendChild(projectFrame);
-  }
-
-  pfFullBtn?.addEventListener('click', () => {
-    if (!projectFrame) return;
-    const isFs = !projectFrame.classList.contains('pf-fullscreen');
-    if (isFs) {
-      pfDx = 0;
-      pfDy = 0;
-      projectFrame.style.transform = '';
-      document.body.appendChild(projectFrame);
-      projectFrame.classList.add('pf-fullscreen');
-      pfOverlay?.classList.add('pf-overlay-active');
-      const svg = pfFullBtn.querySelector('svg');
-      if (svg) svg.innerHTML = pfIconShrink;
-    } else {
-      exitFullscreen();
-    }
-  });
-
-  pfOverlay?.addEventListener('click', exitFullscreen);
-
-  document.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (e.key === 'Escape' && projectFrame?.classList.contains('pf-fullscreen')) exitFullscreen();
-  });
 
   document.querySelectorAll('#home .reveal').forEach((el) => {
     const io = new IntersectionObserver(

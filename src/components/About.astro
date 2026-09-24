@@ -2,10 +2,10 @@
 import personalData from '../data/personal.json';
 ---
 
-<section id="about" class="py-24 bg-slate-900/30" style="scroll-margin-top: 80px;">
+<section id="about" class="about-section bg-slate-900/30" style="scroll-margin-top: 80px;">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12 reveal">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-8 reveal">
         <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">
           Get to know me
         </p>
@@ -190,6 +190,10 @@ import personalData from '../data/personal.json';
 </script>
 
 <style>
+  .about-section {
+    padding-top: 2.75rem;
+    padding-bottom: 5rem;
+  }
   .background-panel {
     grid-column: 1 / -1;
     display: grid;
@@ -223,6 +227,7 @@ import personalData from '../data/personal.json';
   .background-column p { margin: 0; }
   .background-column li p:first-child { color: #cbd5e1; font-weight: 500; }
   @media (max-width: 767px) {
+    .about-section { padding-top: 2.25rem; padding-bottom: 4rem; }
     .background-panel { grid-template-columns: 1fr; }
   }
 </style>

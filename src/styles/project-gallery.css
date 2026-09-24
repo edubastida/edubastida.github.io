@@ -14,43 +14,74 @@
   object-fit: cover;
 }
 .project-shot[hidden] { display: none; }
-.shot-controls {
+.project-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000 var(--video-poster) center / cover no-repeat;
+}
+.project-video[hidden] { display: none; }
+.project-video-player {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+.project-video > iframe,
+.project-video > div {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.shot-thumbnails {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 10px 20px;
-  background: var(--bg-card);
+  gap: 8px;
+  padding: 9px 12px;
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
 }
-.shot-controls button {
+.shot-thumbnail {
+  position: relative;
+  width: clamp(42px, 15%, 78px);
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  background: #0b0f15;
+  opacity: 0.62;
+  cursor: pointer;
+  transition: opacity 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+.thumbnail-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  border-radius: 10px;
-  background: rgba(99, 102, 241, 0.08);
-  color: var(--text);
-  border: 1px solid var(--border);
-  font-size: 26px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 150ms ease, border-color 150ms ease;
+  width: 24px;
+  height: 24px;
+  padding-left: 2px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.72);
+  font-size: 10px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
-.shot-controls button:hover {
-  background: rgba(99, 102, 241, 0.2);
+.shot-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.shot-thumbnail:hover,
+.shot-thumbnail.is-active {
+  opacity: 1;
   border-color: var(--accent);
+  transform: translateY(-2px);
 }
-.shot-counter {
-  min-width: 48px;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.08em;
-}
-.shot-controls button:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
+.shot-thumbnail:focus-visible { outline: 2px solid var(--neon); outline-offset: 2px; }
 .project-footer { flex-wrap: wrap; gap: 12px; }
 .itch-link { font-size: 0.875rem; padding: 10px 16px; }

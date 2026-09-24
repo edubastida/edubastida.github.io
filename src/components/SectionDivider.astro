@@ -7,54 +7,37 @@
   .sd {
     position: relative;
     width: 100%;
-    height: 52px;
+    height: 24px;
     overflow: hidden;
-    margin: -5px 0;
+    margin: 0;
     z-index: 10;
   }
 
-  .sd-pill {
+  .sd::before {
+    content: '';
     position: absolute;
     top: 50%;
-    height: 44px;
-    width: 100%;
-    background: #00000017;
-    backdrop-filter: brightness(0.98);
-    transition:
-      transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 0.4s ease;
+    left: 50%;
+    width: min(82%, 1080px);
+    height: 1px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(90deg, transparent, var(--border) 18%, var(--border) 82%, transparent);
+    opacity: 0.55;
   }
 
-  /* Pills start invisible only when JS is available. The IntersectionObserver below
-     adds .visible which triggers the slide-in transition. Without JS the pills
-     are always shown (no transition) so the divider is still present. */
-  @media (scripting: enabled) {
-    .sd-pill {
-      opacity: 0;
-    }
-    .sd.visible .sd-l,
-    .sd.visible .sd-r {
-      opacity: 1;
-    }
+  .sd::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: var(--accent);
+    opacity: 0.4;
   }
 
-  .sd-l {
-    right: 67%;
-    transform: translateX(-115%) translateY(-50%);
-    clip-path: polygon(0 100%, calc(100% - 40px) 100%, 100% 99%, calc(100% - 40px) 0, 0 0);
-  }
-  .sd.visible .sd-l {
-    transform: translateX(0) translateY(-50%);
-  }
-
-  .sd-r {
-    left: 67%;
-    transform: translateX(115%) translateY(-50%);
-    clip-path: polygon(0 1%, 40px 0, 100% 0, 100% 100%, 40px 100%);
-  }
-  .sd.visible .sd-r {
-    transform: translateX(0) translateY(-50%);
-  }
+  .sd-pill { display: none; }
 </style>
 
 <script>

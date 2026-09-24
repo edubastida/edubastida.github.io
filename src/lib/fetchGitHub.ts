@@ -158,7 +158,9 @@ function localPathFor(repoName: string, imageUrl: string): string {
 }
 
 export interface ProjectEntry {
+  links?: { label: string; url: string }[];
   images?: string[];
+  youtubeId?: string;
   title: string;
   company: string;
   category: string;

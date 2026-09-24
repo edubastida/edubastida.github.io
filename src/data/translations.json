@@ -618,5 +618,133 @@
   "Next screenshot": {
     "ca": "Captura següent",
     "es": "Captura siguiente"
+  },
+  "Team Project": {
+    "ca": "Projecte d'equip",
+    "es": "Proyecto de equipo"
+  },
+  "View on GitHub ↗": {
+    "ca": "Veure a GitHub ↗",
+    "es": "Ver en GitHub ↗"
+  },
+  "View on GitHub": {
+    "ca": "Veure a GitHub",
+    "es": "Ver en GitHub"
+  },
+  "UDP Client · GitHub": {
+    "ca": "Client UDP · GitHub",
+    "es": "Cliente UDP · GitHub"
+  },
+  "UDP Server · GitHub": {
+    "ca": "Servidor UDP · GitHub",
+    "es": "Servidor UDP · GitHub"
+  },
+  "TCP Server · GitHub": {
+    "ca": "Servidor TCP · GitHub",
+    "es": "Servidor TCP · GitHub"
+  },
+  "networking": {
+    "ca": "xarxes",
+    "es": "redes"
+  },
+  "Networking": {
+    "ca": "Xarxes",
+    "es": "Redes"
+  },
+  "Software Engineering": {
+    "ca": "Enginyeria del programari",
+    "es": "Ingeniería del software"
+  },
+  "Client–Server": {
+    "ca": "Client–Servidor",
+    "es": "Cliente–Servidor"
+  },
+  "SDL Game - Retro Games": {
+    "ca": "Joc SDL - Jocs retro",
+    "es": "Juego SDL - Juegos retro"
+  },
+  "Networked Game Shooter - UDP & TCP": {
+    "ca": "Shooter en xarxa - UDP i TCP",
+    "es": "Shooter en red - UDP y TCP"
+  },
+  "ENTI Project · 2024/2025": {
+    "ca": "Projecte ENTI · 2024/2025",
+    "es": "Proyecto ENTI · 2024/2025"
+  },
+  "Platformer": {
+    "ca": "Plataformes",
+    "es": "Plataformas"
+  },
+  "Space": {
+    "ca": "Espai",
+    "es": "Espacio"
+  },
+  "A fast-paced 2D endless runner built in Unity as a second-year ENTI project. Play as an astronaut escaping a black hole, jump between planets, collect coins to revive and chase a new personal best. Available in the browser and on Android.": {
+    "ca": "Endless runner 2D de ritme ràpid creat amb Unity com a projecte de segon curs d'ENTI. Juga com un astronauta que escapa d'un forat negre, salta entre planetes, recull monedes per reviure i intenta superar el teu rècord. Disponible al navegador i a Android.",
+    "es": "Endless runner 2D de ritmo rápido creado con Unity como proyecto de segundo curso de ENTI. Juega como un astronauta que escapa de un agujero negro, salta entre planetas, recoge monedas para revivir e intenta superar tu récord. Disponible en el navegador y en Android."
+  },
+  "A collaborative retro game project built with C++ and SDL. The code includes multiple gameplay scenes, enemy types, collisions, input and rendering managers, and XML level loading.": {
+    "ca": "Projecte col·laboratiu de joc retro creat amb C++ i SDL. El codi inclou diverses escenes de joc, tipus d'enemics, col·lisions, gestors d'entrada i renderització, i càrrega de nivells XML.",
+    "es": "Proyecto colaborativo de juego retro creado con C++ y SDL. El código incluye varias escenas de juego, tipos de enemigos, colisiones, gestores de entrada y renderizado, y carga de niveles XML."
+  },
+  "A collaborative networked shooter built with C++. It brings together a UDP game client, a UDP server and a TCP server, with code for local and online players, lobbies and packet management.": {
+    "ca": "Shooter en xarxa col·laboratiu creat amb C++. Reuneix un client de joc UDP, un servidor UDP i un servidor TCP, amb codi per a jugadors locals i en línia, sales i gestió de paquets.",
+    "es": "Shooter en red colaborativo creado con C++. Reúne un cliente de juego UDP, un servidor UDP y un servidor TCP, con código para jugadores locales y en línea, salas y gestión de paquetes."
+  },
+  "Open details for Orbital Hopper": {
+    "ca": "Obre els detalls de Orbital Hopper",
+    "es": "Abrir detalles de Orbital Hopper"
+  },
+  "Open details for SDL Game · Software Engineering": {
+    "ca": "Obre els detalls de Joc SDL · Enginyeria del programari",
+    "es": "Abrir detalles de Juego SDL · Ingeniería del software"
+  },
+  "Open details for Networked Game · UDP & TCP": {
+    "ca": "Obre els detalls de Joc en xarxa · UDP i TCP",
+    "es": "Abrir detalles de Juego en red · UDP y TCP"
+  },
+  "Selected projects": {
+    "ca": "Projectes seleccionats",
+    "es": "Proyectos seleccionados"
+  },
+  "Barcelona · Game Development": {
+    "ca": "Barcelona · Desenvolupament de videojocs",
+    "es": "Barcelona · Desarrollo de videojuegos"
+  },
+  "01 / My work": {
+    "ca": "01 / La meva feina",
+    "es": "01 / Mi trabajo"
+  },
+  "02 / Get to know me": {
+    "ca": "02 / Coneix-me",
+    "es": "02 / Conóceme"
+  },
+  "03 / What I work with": {
+    "ca": "03 / Eines que utilitzo",
+    "es": "03 / Herramientas que utilizo"
+  },
+  "04 / Contact": {
+    "ca": "04 / Contacte",
+    "es": "04 / Contacto"
+  },
+  "Back to top ↑": {
+    "ca": "Torna a dalt ↑",
+    "es": "Volver arriba ↑"
+  },
+  "SDL Game": {
+    "ca": "Joc SDL",
+    "es": "Juego SDL"
+  },
+  "Networked Game": {
+    "ca": "Joc en xarxa",
+    "es": "Juego en red"
+  },
+  "Pause slideshow": {
+    "ca": "Pausa les diapositives",
+    "es": "Pausar diapositivas"
+  },
+  "Play slideshow": {
+    "ca": "Reprodueix les diapositives",
+    "es": "Reproducir diapositivas"
   }
 }

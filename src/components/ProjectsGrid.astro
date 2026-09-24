@@ -14,26 +14,6 @@ const displayProjects = featuredOnly
   ? allProjectsData.filter((p) => p.sliderImage)
   : allProjectsData;
 
-import { icons } from '../lib/icons';
-
-const categoryFilters = [...new Set(allProjectsData.map((p) => p.category))].map((cat) => ({
-  label: cat.replace(/\b\w/g, (c) => c.toUpperCase()),
-  value: cat,
-}));
-
-const filters = [
-  { label: 'Featured', value: 'featured' },
-  { label: 'All', value: 'all' },
-  ...categoryFilters,
-];
-
-const projectsJson = JSON.stringify(
-  allProjectsData.map((p) => ({
-    ...p,
-    sliderImage:   p.sliderImage   ? withBase(p.sliderImage)   : p.sliderImage,
-    backgroundImage: p.backgroundImage ? withBase(p.backgroundImage) : p.backgroundImage,
-  }))
-);
 ---
 
 <section id="projects" class="py-24 bg-slate-900/30" style="scroll-margin-top: 80px;">
@@ -43,80 +23,21 @@ const projectsJson = JSON.stringify(
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Featured Projects</h2>
     </div>
 
-    <div class="flex flex-wrap justify-center gap-2 mb-10 reveal" style="transition-delay:0.1s;">
-      {
-        filters.map((f) => (
-          <button
-            class="filter-btn"
-            data-filter={f.value}
-            aria-pressed={f.value === 'featured' ? 'true' : 'false'}
-          >
-            {f.label}
-            <span class="filter-count" data-count={f.value} />
-          </button>
-        ))
-      }
-    </div>
-
     <div
       id="projects-grid"
-      class:list={["mx-auto grid gap-6", displayProjects.length === 1 ? "max-w-4xl grid-cols-1" : "max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3"]}
+      class="mx-auto grid max-w-5xl grid-cols-1 gap-16"
     >
       {
         displayProjects.map((project, i) => (
           <div
-            class={`project-card reveal${project.backgroundImage ? ' has-bg' : ''}`}
+            class:list={['project-card reveal', (project.images?.length || project.youtubeId) ? 'has-screens' : '']}
+            id={`work-${i}`}
             data-category={project.category}
             data-featured={(project as any).featured ? 'true' : 'false'}
-            data-index={i}
             style={`transition-delay: ${(i % 3) * 0.07}s;`}
 
           >
-            {(project as any).colorIcon && (
-              <div class="float-icon-wrap" aria-hidden="true">
-                <img
-                  src={withBase(
-                    (project as any).colorIcon.includes(':')
-                      ? `/images/icons/${(project as any).colorIcon.replace(':', '/')}.svg`
-                      : (project as any).colorIcon
-                  )}
-                  alt=""
-                  class="float-icon"
-                  loading="lazy"
-                  width="44"
-                  height="44"
-                />
-              </div>
-            )}
-
-            <div class={`project-card-inner${project.backgroundImage ? ' has-bg-img' : ''}`}>
-              {project.backgroundImage && (
-                <div class="card-bg-img" aria-hidden="true">
-                  <img
-                    src={withBase(project.backgroundImage!)}
-                    alt=""
-                    loading="lazy"
-                    width="600"
-                    height="400"
-                  />
-                </div>
-              )}
-
-              {project.images && project.images.length > 0 && (
-                <div class="project-screens">
-                  {project.images.map((src, index) => (
-                    <img class="project-shot" src={withBase(src)} alt={`${project.title} — Gameplay ${index + 1}`} hidden={index !== 0} loading={index === 0 ? "eager" : "lazy"} width="1280" height="720" />
-                  ))}
-                  {project.images.length > 1 && (
-                    <div class="shot-controls">
-                      <button type="button" data-shot-step="-1" aria-label="Previous screenshot">‹</button>
-                      <span class="shot-counter" aria-live="polite">1 / {project.images.length}</span>
-                      <button type="button" data-shot-step="1" aria-label="Next screenshot">›</button>
-                    </div>
-                  )}
-                </div>
-              )}
-              <div class="card-glow" aria-hidden="true" />
+            <div class="project-card-inner">
 
               <div class="p-5 flex flex-col flex-1 relative z-10">
                 <div class="flex items-start justify-between gap-3 mb-3">
@@ -138,39 +59,59 @@ const projectsJson = JSON.stringify(
                 </div>
               </div>
 
+              {((project.images && project.images.length > 0) || project.youtubeId) && (
+                <div class="project-screens" data-youtube-id={project.youtubeId}>
+                  {project.youtubeId && (
+                    <div
+                      class="project-video project-media"
+                      style={`--video-poster: url("https://i.ytimg.com/vi/${project.youtubeId}/maxresdefault.jpg")`}
+                    >
+                      <div
+                        class="project-video-player"
+                        data-video-id={project.youtubeId}
+                        data-video-title={`${project.title} trailer`}
+                      ></div>
+                    </div>
+                  )}
+                  {project.images.map((src, index) => (
+                    <img class="project-shot project-media" src={withBase(src)} alt={`${project.title} — Gameplay ${index + 1}`} hidden={Boolean(project.youtubeId) || index !== 0} loading={index === 0 ? "eager" : "lazy"} width="1280" height="720" />
+                  ))}
+                  {(project.images.length + (project.youtubeId ? 1 : 0)) > 1 && (
+                    <div class="shot-thumbnails" aria-label={`Screenshots for ${project.title}`}>
+                      {project.youtubeId && (
+                        <button
+                          type="button"
+                          class="shot-thumbnail shot-thumbnail-video is-active"
+                          data-media-kind="video"
+                          aria-label={`Play ${project.title} trailer`}
+                          aria-current="true"
+                        >
+                          <img src={`https://i.ytimg.com/vi/${project.youtubeId}/mqdefault.jpg`} alt="" loading="lazy" width="160" height="90" />
+                          <span class="thumbnail-play" aria-hidden="true">▶</span>
+                        </button>
+                      )}
+                      {project.images.map((src, index) => (
+                        <button
+                          type="button"
+                          class={`shot-thumbnail ${!project.youtubeId && index === 0 ? 'is-active' : ''}`}
+                          data-media-kind="image"
+                          data-shot-index={index}
+                          aria-label={`Show screenshot ${index + 1}`}
+                          aria-current={!project.youtubeId && index === 0 ? 'true' : undefined}
+                        >
+                          <img src={withBase(src)} alt="" loading="lazy" width="160" height="90" />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
               <div class="project-footer relative z-10">
                 <div class="footer-shimmer" aria-hidden="true" />
-                <span class="category-badge">{project.category}</span>
-                {project.icon && icons[project.icon] && (
-                  <div class="card-icon shrink-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-5 h-5"
-                      set:html={icons[project.icon]}
-                    />
-                  </div>
-                )}
-                <button type="button" class="view-hint" aria-label={`Open details for ${project.title}`}>
-                  <span class="view-hint-text">View screenshots</span>
-                  <svg
-                    class="view-hint-arrow"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                    />
-                  </svg>
-                </button>
-                {project.link && <a class="btn-primary itch-link" href={project.link} target="_blank" rel="noopener noreferrer">View on itch.io ↗</a>}
+                {(project.links ?? (project.link ? [{ url: project.link, label: project.link.includes('itch.io') ? 'View on itch.io ↗' : 'View on GitHub ↗' }] : [])).map((link) => (
+                  <a class="btn-primary itch-link" href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                ))}
               </div>
             </div>
           </div>
@@ -178,75 +119,11 @@ const projectsJson = JSON.stringify(
       }
     </div>
 
-    <p id="projects-empty" class="hidden text-center text-slate-600 text-sm mt-12">
-      No projects in this category yet.
-    </p>
   </div>
 </section>
 
-<div
-  id="project-modal"
-  class="modal-backdrop"
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby="modal-title"
-  hidden
->
-  <div class="modal-container" id="modal-container">
-    <button class="modal-close" id="modal-close" aria-label="Close">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    </button>
-
-    <div class="modal-hero" id="modal-hero">
-      <div class="modal-hero-overlay"></div>
-      <div class="modal-hero-content">
-        <div id="modal-category-badge" class="modal-cat-badge"></div>
-        <h2 id="modal-title" class="modal-heading"></h2>
-        <p id="modal-company" class="modal-company"></p>
-      </div>
-    </div>
-
-    <div class="modal-body">
-      <p id="modal-description" class="modal-description"></p>
-      <div id="modal-tags" class="modal-tags"></div>
-
-      <div class="modal-cta-wrap">
-        <a id="modal-link" href="#" target="_blank" rel="noopener" class="modal-cta-link">
-          <img
-            src={withBase('/images/assets/icon--link.png')}
-            alt=""
-            width={18}
-            height={18}
-            class="modal-link-icon"
-          />
-          <span id="modal-link-text">View Project</span>
-          <svg class="modal-cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-            ></path>
-          </svg>
-        </a>
-        <p id="modal-no-link" class="modal-no-link hidden">Private / No public link available.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- define:vars injects the server-rendered JSON blob as a JS variable in this inline script.
-     is:inline is required alongside define:vars; without it Astro would bundle the script
-     and the injected variable would not be in scope. -->
-<script is:inline define:vars={{ projectsJson }}>
+<script is:inline>
   // @ts-nocheck
-  const projects = JSON.parse(projectsJson);
 
   document.querySelectorAll('#projects .reveal').forEach((el) => {
     const io = new IntersectionObserver(
@@ -261,217 +138,149 @@ const projectsJson = JSON.stringify(
     io.observe(el);
   });
 
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card[data-category]');
-  const empty = document.getElementById('projects-empty');
-  let active = null;
-
-  document.querySelectorAll('.filter-count').forEach((el) => {
-    const cat = el.dataset.count;
-    let n;
-    if (cat === 'all') n = cards.length;
-    else if (cat === 'featured') n = [...cards].filter((c) => c.dataset.featured === 'true').length;
-    else n = [...cards].filter((c) => c.dataset.category === cat).length;
-    el.textContent = `${n}`;
-  });
-
-  function applyFilter(filter) {
-    if (filter === active) return;
-    active = filter;
-    filterBtns.forEach((b) => {
-      const on = b.dataset.filter === filter;
-      b.classList.toggle('filter-active', on);
-      b.setAttribute('aria-pressed', String(on));
+  const loadYouTubeApi = () => {
+    if (window.YT?.Player) return Promise.resolve(window.YT);
+    if (window.__portfolioYouTubeApi) return window.__portfolioYouTubeApi;
+    window.__portfolioYouTubeApi = new Promise((resolve) => {
+      const previousReady = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        if (typeof previousReady === 'function') previousReady();
+        resolve(window.YT);
+      };
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      document.head.appendChild(script);
     });
-    let visible = 0;
-    cards.forEach((card) => {
-      const matches =
-        filter === 'all' ||
-        (filter === 'featured' && card.dataset.featured === 'true') ||
-        card.dataset.category === filter;
-      card.classList.remove('pf-enter');
-      if (!matches) {
-        card.classList.add('pf-hidden');
-      } else {
-        card.classList.remove('pf-hidden');
-        card.style.setProperty('--enter-delay', `${visible * 0.05}s`);
-        // Force a reflow so the browser registers the class removal before re-adding pf-enter.
-        // Without this, the CSS animation does not restart when re-showing an already-visible card.
-        void card.offsetWidth;
-        card.classList.add('pf-enter');
-        visible++;
-      }
-    });
-    if (empty) empty.classList.toggle('hidden', visible > 0);
-  }
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
-  });
-
-  applyFilter('featured');
-  document.querySelector('[data-filter="featured"]')?.classList.add('filter-active');
-
-  const modal = document.getElementById('project-modal');
-  const container = document.getElementById('modal-container');
-  const closeBtn = document.getElementById('modal-close');
-  const modalHero = document.getElementById('modal-hero');
-  const modalCat = document.getElementById('modal-category-badge');
-  const modalTitle = document.getElementById('modal-title');
-  const modalCo = document.getElementById('modal-company');
-  const modalDesc = document.getElementById('modal-description');
-  const modalTags = document.getElementById('modal-tags');
-  const modalLink = document.getElementById('modal-link');
-  const modalLinkTx = document.getElementById('modal-link-text');
-  const modalNoLink = document.getElementById('modal-no-link');
-
-  function openModal(idx) {
-    const p = projects[idx];
-    if (!p) return;
-
-    const img = p.backgroundImage || null;
-    if (img) {
-      modalHero.style.backgroundImage = `url('${img}')`;
-      modalHero.style.display = '';
-    } else {
-      modalHero.style.backgroundImage = '';
-      modalHero.style.display = 'none';
-    }
-
-    modalCat.textContent = p.category;
-    modalTitle.textContent = p.title;
-    modalCo.textContent = p.company;
-    modalDesc.textContent = p.description;
-
-    modalTags.innerHTML = '';
-    for (const t of p.tags) {
-      const span = document.createElement('span');
-      span.className = 'tag';
-      span.textContent = t;
-      modalTags.appendChild(span);
-    }
-
-    if (p.link) {
-      modalLink.href = p.link;
-      if (p.link.includes('github.com')) modalLinkTx.textContent = 'View on GitHub';
-      else if (p.link.includes('gitlab')) modalLinkTx.textContent = 'View on GitLab';
-      else if (p.link.includes('blog')) modalLinkTx.textContent = 'Read the Post';
-      else modalLinkTx.textContent = 'View Project';
-      modalLink.classList.remove('hidden');
-      modalNoLink.classList.add('hidden');
-    } else {
-      modalLink.classList.add('hidden');
-      modalNoLink.classList.remove('hidden');
-    }
-
-    // The `hidden` attribute (not a CSS class) is used here because the modal-backdrop rule
-    // sets `display:none !important` on `[hidden]`, which gives correct AT (screen reader) semantics.
-    modal.removeAttribute('hidden');
-    document.body.style.overflow = 'hidden'; // prevent page scroll while modal is open
-    void container.offsetWidth;
-    modal.classList.add('modal-open');
-    closeBtn.focus();
-  }
-
-  function closeModal() {
-    modal.classList.remove('modal-open');
-    modal.classList.add('modal-closing');
-    setTimeout(() => {
-      modal.setAttribute('hidden', '');
-      modal.classList.remove('modal-closing');
-      document.body.style.overflow = '';
-    }, 280);
-  }
+    return window.__portfolioYouTubeApi;
+  };
 
   document.querySelectorAll('.project-screens').forEach((gallery) => {
     const shots = [...gallery.querySelectorAll('.project-shot')];
-    let current = 0;
-    gallery.querySelectorAll('[data-shot-step]').forEach((button) => {
-      button.addEventListener('click', (event) => {
+    const videoSlide = gallery.querySelector('.project-video');
+    const videoHost = gallery.querySelector('.project-video-player');
+    const thumbnails = [...gallery.querySelectorAll('.shot-thumbnail')];
+    const videoThumbnail = gallery.querySelector('[data-media-kind="video"]');
+    let current = videoSlide ? -1 : 0;
+    let timer, player, visible = false, videoFinished = false;
+
+    const stopTimer = () => clearInterval(timer);
+    const updateThumbnails = () => {
+      thumbnails.forEach((thumbnail) => {
+        const active = thumbnail.dataset.mediaKind === 'video'
+          ? current === -1
+          : Number(thumbnail.dataset.shotIndex) === current && current >= 0;
+        thumbnail.classList.toggle('is-active', active);
+        if (active) thumbnail.setAttribute('aria-current', 'true');
+        else thumbnail.removeAttribute('aria-current');
+      });
+    };
+    const showImage = (index) => {
+      if (!shots.length) return;
+      if (player?.stopVideo) player.stopVideo();
+      if (videoSlide) videoSlide.hidden = true;
+      current = (index + shots.length) % shots.length;
+      shots.forEach((shot, shotIndex) => { shot.hidden = shotIndex !== current; });
+      updateThumbnails();
+    };
+    const startImages = () => {
+      stopTimer();
+      if (visible && !document.hidden && current >= 0 && (shots.length > 1 || videoSlide)) {
+        timer = setInterval(() => {
+          if (videoSlide && current === shots.length - 1) showVideo();
+          else showImage(current + 1);
+        }, 2500);
+      }
+    };
+    const showVideo = () => {
+      if (!videoSlide) return;
+      stopTimer();
+      current = -1;
+      videoFinished = false;
+      shots.forEach((shot) => { shot.hidden = true; });
+      videoSlide.hidden = false;
+      updateThumbnails();
+      if (player) {
+        player.seekTo(0, true);
+        player.mute();
+        player.playVideo();
+      }
+    };
+
+    thumbnails.forEach((button) => {
+      button.addEventListener('click', event => {
         event.stopPropagation();
-        current = (current + Number(button.dataset.shotStep) + shots.length) % shots.length;
-        shots.forEach((shot, index) => { shot.hidden = index !== current; });
-        gallery.querySelector('.shot-counter').textContent = `${current + 1} / ${shots.length}`;
+        if (button === videoThumbnail) showVideo();
+        else {
+          showImage(Number(button.dataset.shotIndex));
+          startImages();
+        }
       });
     });
-  });
 
-  cards.forEach((card) => {
-    card.addEventListener('click', (e) => {
-      if (e.target instanceof Element && e.target.closest('a')) return;
-      openModal(parseInt(card.dataset.index, 10));
-    });
-    card.addEventListener('keydown', (e) => {
-      if (e.target instanceof Element && e.target.closest('a, button')) return;
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(parseInt(card.dataset.index, 10));
+    if (videoHost) {
+      loadYouTubeApi().then((YT) => {
+        player = new YT.Player(videoHost, {
+          width: '100%',
+          height: '100%',
+          videoId: videoHost.dataset.videoId,
+          playerVars: {
+            autoplay: 0,
+            controls: 1,
+            mute: 1,
+            playsinline: 1,
+            rel: 0,
+            origin: window.location.origin
+          },
+          events: {
+            onReady: () => {
+              const iframe = player.getIframe();
+              iframe.title = videoHost.dataset.videoTitle || 'Project trailer';
+              iframe.style.width = '100%';
+              iframe.style.height = '100%';
+              iframe.style.display = 'block';
+              player.mute();
+              if (visible && current === -1 && !videoFinished) player.playVideo();
+            },
+            onStateChange: (event) => {
+              if (event.data === YT.PlayerState.ENDED) {
+                videoFinished = true;
+                showImage(0);
+                startImages();
+              }
+            }
+          }
+        });
+      });
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopTimer();
+        if (current === -1 && player?.pauseVideo) player.pauseVideo();
+      } else if (visible) {
+        if (current === -1 && !videoFinished && player?.playVideo) player.playVideo();
+        else startImages();
       }
     });
+
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (!visible) {
+        stopTimer();
+        if (current === -1 && player?.pauseVideo) player.pauseVideo();
+      } else if (current === -1 && !videoFinished && player?.playVideo) {
+        player.mute();
+        player.playVideo();
+      } else {
+        startImages();
+      }
+    }, {threshold: .35}).observe(gallery);
   });
 
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
-  });
 </script>
 
 <style is:global>
-  .filter-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.4rem 1rem;
-    border-radius: 9999px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: var(--text-dim);
-    background: var(--bg-section);
-    border: 1px solid var(--border);
-    cursor: pointer;
-    transition:
-      color 0.2s ease,
-      background 0.2s ease,
-      border-color 0.2s ease,
-      transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .filter-btn:hover {
-    color: var(--text-muted);
-    background: var(--bg-card);
-    border-color: var(--border-hover);
-    transform: translateY(-1px);
-  }
-  .filter-btn:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-  .filter-btn.filter-active {
-    color: var(--accent);
-    background: rgba(99, 102, 241, 0.1);
-    border-color: rgba(99, 102, 241, 0.4);
-  }
-  .filter-count {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--text-dimmer);
-    background: var(--border);
-    border-radius: 9999px;
-    padding: 0 0.35rem;
-    min-width: 1.1rem;
-    text-align: center;
-    transition:
-      color 0.2s ease,
-      background 0.2s ease;
-  }
-  .filter-btn.filter-active .filter-count {
-    color: var(--accent);
-    background: rgba(99, 102, 241, 0.15);
-  }
-
   .project-card {
     transition: opacity 0.2s ease;
     position: relative;
@@ -684,291 +493,6 @@ const projectsJson = JSON.stringify(
     color: rgba(99, 102, 241, 0.45);
     transition: color 0.35s ease;
   }
-  .project-card:hover .view-hint svg {
-    color: rgba(99, 102, 241, 0.85);
-    transform: rotate(-8deg) scale(1.15);
-  }
-
-  .view-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--text-dimmer);
-    margin-left: auto;
-    position: relative;
-    z-index: 1;
-    transition:
-      color 0.3s ease,
-      gap 0.35s ease;
-    user-select: none;
-  }
-  .view-hint-arrow {
-    width: 0.8rem;
-    height: 0.8rem;
-    flex-shrink: 0;
-    transition:
-      transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-      opacity 0.3s ease;
-    opacity: 0.5;
-  }
-  .project-card:hover .view-hint {
-    color: var(--accent);
-    gap: 0.6rem;
-  }
-  .project-card:hover .view-hint-arrow {
-    transform: translate(3px, -3px);
-    opacity: 1;
-  }
-  .project-card.has-bg .view-hint {
-    color: rgba(148, 163, 184, 0.55);
-  }
-
-  .modal-backdrop {
-    position: fixed;
-    inset: 0;
-    z-index: 10000;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 5vh 1rem 2rem;
-    background: rgba(2, 6, 23, 0.82);
-    overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.28s ease;
-  }
-  .modal-backdrop[hidden] {
-    display: none !important;
-  }
-  .modal-backdrop.modal-open {
-    opacity: 1;
-    pointer-events: auto;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-  }
-  .modal-backdrop.modal-closing {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .modal-container {
-    position: relative;
-    width: 100%;
-    max-width: 640px;
-    background: var(--bg-overlay);
-    border: 1px solid var(--border);
-    border-radius: 1.25rem;
-    box-shadow:
-      0 32px 80px rgba(0, 0, 0, 0.55),
-      0 0 0 1px rgba(99, 102, 241, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.06);
-    overflow: hidden;
-    transform: translateY(28px) scale(0.97);
-    transition:
-      transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 0.28s ease;
-    opacity: 0;
-  }
-  .modal-open .modal-container {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  .modal-closing .modal-container {
-    transform: translateY(16px) scale(0.98);
-    opacity: 0;
-  }
-
-  .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 10;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #94a3b8;
-    cursor: pointer;
-    transition:
-      background 0.2s ease,
-      color 0.2s ease,
-      transform 0.25s ease;
-  }
-  .modal-close:hover {
-    background: rgba(99, 102, 241, 0.25);
-    color: #fff;
-    transform: rotate(90deg);
-  }
-  .modal-close:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-
-  .modal-hero {
-    position: relative;
-    height: 220px;
-    background-size: cover;
-    background-position: top center;
-    background-color: var(--bg-section);
-    flex-shrink: 0;
-  }
-  .modal-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.15) 0%,
-      rgba(15, 23, 42, 0.85) 80%,
-      rgba(15, 23, 42, 1) 100%
-    );
-  }
-  .modal-hero-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem 1.75rem 1.25rem;
-  }
-  .modal-cat-badge {
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    background: rgba(99, 102, 241, 0.12);
-    border: 1px solid rgba(99, 102, 241, 0.25);
-    border-radius: 9999px;
-    padding: 0.2rem 0.65rem;
-    margin-bottom: 0.6rem;
-  }
-  .modal-heading {
-    font-size: 1.35rem;
-    font-weight: 800;
-    line-height: 1.25;
-    color: var(--text);
-    margin: 0 0 0.3rem;
-  }
-  .modal-company {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent);
-    opacity: 0.75;
-    margin: 0;
-  }
-
-  .modal-body {
-    padding: 1.5rem 1.75rem 1.75rem;
-  }
-  .modal-description {
-    font-size: 0.925rem;
-    line-height: 1.65;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-  }
-  .modal-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .modal-cta-wrap {
-    border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
-    text-align: center;
-  }
-  .modal-cta-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--accent);
-    text-decoration: none;
-    transition:
-      gap 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-      filter 0.25s ease;
-  }
-  .modal-cta-link:hover {
-    gap: 1rem;
-    filter: brightness(1.15);
-  }
-  .modal-cta-arrow {
-    width: 1.1rem;
-    height: 1.1rem;
-    flex-shrink: 0;
-    color: #38bdf8;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    -webkit-text-fill-color: initial;
-  }
-  .modal-cta-link:hover .modal-cta-arrow {
-    transform: translate(4px, -4px);
-  }
-  .modal-no-link {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--text-dim);
-  }
-
-  .modal-cta-wrap a {
-    display: inline-flex;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 1.5em;
-    position: relative;
-    padding: 0.3em;
-    margin-top: 0.2em;
-  }
-  .modal-cta-wrap a:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 0.25rem;
-  }
-  .modal-cta-wrap a:after {
-    display: block;
-    content: ' ';
-    width: 100%;
-    height: 0.2em;
-    background-color: var(--bg-overlay);
-    position: absolute;
-    right: 0;
-    left: 0;
-    bottom: -0.2em;
-    opacity: 1;
-    transition:
-      height 0.2s cubic-bezier(0.81, 0.1, 0.68, 0.96),
-      bottom 0.2s cubic-bezier(0.81, 0.1, 0.68, 0.96);
-    pointer-events: none;
-    mix-blend-mode: difference;
-    border-radius: 0.1em;
-  }
-  .modal-cta-wrap a:hover::after {
-    bottom: 0;
-    height: 100%;
-  }
-  .modal-cta-link {
-    padding: 0.5rem 1rem;
-  }
-
-  .modal-body .modal-cta-link img {
-    filter: saturate(2);
-    transform: scale(1.5);
-    margin-right: 10px;
-  }
-  .modal-cta-wrap a:hover img {
-    filter: saturate(10) invert(1);
-    transform: scale(1.8);
-  }
-
   .project-footer .card-icon svg {
     transition:
       transform 300ms ease,
@@ -1024,10 +548,6 @@ const projectsJson = JSON.stringify(
   [data-theme='light'] .project-card.has-bg .category-badge {
     color: rgba(15, 23, 42, 0.6);
   }
-  [data-theme='light'] .project-card.has-bg .view-hint {
-    color: rgba(71, 85, 105, 0.65);
-  }
-
   [data-theme='light'] .project-card:hover .project-card-inner {
     box-shadow:
       0 16px 40px rgba(0, 0, 0, 0.1),
@@ -1050,32 +570,6 @@ const projectsJson = JSON.stringify(
     background: rgba(109, 40, 217, 0.08);
   }
 
-  [data-theme='light'] .modal-backdrop {
-    background: rgba(241, 245, 249, 0.88);
-  }
-  [data-theme='light'] .modal-container {
-    box-shadow:
-      0 24px 60px rgba(0, 0, 0, 0.14),
-      0 0 0 1px rgba(109, 40, 217, 0.1);
-  }
-  [data-theme='light'] .modal-close {
-    background: rgba(255, 255, 255, 0.7);
-    border-color: rgba(0, 0, 0, 0.1);
-    color: #64748b;
-  }
-  [data-theme='light'] .modal-close:hover {
-    background: rgba(109, 40, 217, 0.15);
-    color: #6d28d9;
-  }
-  [data-theme='light'] .modal-hero {
-    background-color: #e2e8f0;
-  }
-  [data-theme='light'] .modal-hero-overlay {
-    background: linear-gradient(to bottom, #ffffff00, #0f172a4d 80%, #a8a8a875);
-  }
-  [data-theme='light'] .modal-hero-content {
-    color: #0f172a;
-  }
   [data-theme='light'] .modal-cat-badge {
     color: #ffffff;
     background: #6d28d91f;

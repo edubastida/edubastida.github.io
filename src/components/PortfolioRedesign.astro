@@ -1,0 +1,111 @@
+---
+import personal from '../data/personal.json';
+import projects from '../data/projects.json';
+import skills from '../data/skills.json';
+import expertise from '../data/expertise.json';
+import { withBase } from '../lib/assetPath';
+const socials = [
+  { label: 'GitHub', url: 'https://github.com/' + personal.github },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/' + personal.linkedin + '/' },
+];
+---
+<div class="editorial-site">
+  <header class="ed-header">
+    <a class="ed-brand" href="#home">EB<span> / </span>Portfolio</a>
+    <nav aria-label="Site navigation">
+      <a href="#projects">Projects</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="ed-settings">
+      <select id="language-selector" aria-label="Language" translate="no"><option value="en">ENG</option><option value="ca">CAT</option><option value="es">CAST</option></select>
+      <button id="ed-theme" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">◐</button>
+    </div>
+  </header>
+  <main id="main-content">
+    <section id="home" class="ed-intro">
+      <div>
+        <p class="ed-eyebrow">Barcelona · Game Development</p>
+        <h1>Eduard<br />Bastida Perez<span class="ed-period">.</span></h1>
+        <p class="ed-role">{personal.heroRole}</p>
+      </div>
+      <div class="ed-intro-side">
+        <img class="ed-portrait" src={withBase(personal.photo)} alt={personal.photoAlt} width="340" height="425" />
+        <p>{personal.bio}</p>
+        <div class="ed-actions"><a class="ed-button" href={withBase(personal.cv)} download><span>Download CV</span> <span aria-hidden="true">↓</span></a><a class="ed-text-link" href="#contact"><span>Contact Me</span> <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+    <section id="projects" class="ed-section">
+      <div class="ed-section-heading"><div><p class="ed-eyebrow">01 / My work</p><h2>Selected projects</h2></div><span class="ed-count">{String(projects.items.length).padStart(2, "0")}</span></div>
+      <nav class="ed-project-nav" aria-label="Projects">
+        {projects.items.map((project, index) => <a href={'#work-' + index}>{project.title.split(' · ')[0]}</a>)}
+      </nav>
+      <div class="ed-projects">
+        {projects.items.map((project, index) => {
+          const links = project.links ?? [{url:project.link,label:project.link.includes('itch.io') ? 'View on itch.io ↗' : 'View on GitHub ↗'}];
+          return (
+            <article id={'work-' + index} class:list={['ed-project', {'ed-project-technical': !project.images.length}]}>
+              {project.images.length > 0 && (
+                <div class="ed-gallery">
+                  <div class="ed-gallery-images">
+                    {project.images.map((src, shot) => <img src={withBase(src)} alt={project.title + ' — ' + (shot + 1)} width="1280" height="720" hidden={shot !== 0} loading={index === 0 && shot === 0 ? 'eager' : 'lazy'} />)}
+                  </div>
+                  <div class="ed-gallery-controls">
+                    <span>{project.title}</span>
+                    <div><button type="button" data-step="-1" aria-label="Previous screenshot">←</button><output aria-live="polite">1 / {project.images.length}</output><button type="button" data-step="1" aria-label="Next screenshot">→</button></div>
+                  </div>
+                </div>
+              )}
+              <div class="ed-project-copy">
+                <p class="ed-project-number">{String(index + 1).padStart(2,'0')} <span>/ {project.tags[0]}</span></p>
+                <h3>{project.title}</h3>
+                <p class="ed-project-role">{project.company}</p>
+                <p class="ed-description">{project.description}</p>
+                <ul class="ed-tags">{project.tags.map(tag => <li>{tag}</li>)}</ul>
+                <div class="ed-project-links">{links.map(link => <a class="ed-button" href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>)}</div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+    <section id="about" class="ed-section">
+      <div class="ed-section-heading"><div><p class="ed-eyebrow">02 / Get to know me</p><h2>About Me</h2></div></div>
+      <div class="ed-about-copy">
+        {personal.aboutLong.split('\n\n').map(paragraph => <p>{paragraph.split('**').map((text,index)=> index % 2 ? <strong>{text}</strong> : text)}</p>)}
+      </div>
+      <div class="ed-background">
+        <div><h3>Experience</h3>{personal.experienceEntries.map(entry => <div class="ed-entry"><p class="ed-dates">{entry.dates}</p><h4>{entry.role}</h4><p>{entry.place}</p></div>)}</div>
+        <div><h3>Education</h3>{personal.educationEntries.map(entry => <div class="ed-entry"><p class="ed-dates">{entry.dates}</p><h4>{entry.course}</h4><p>{entry.place}</p></div>)}</div>
+      </div>
+      <div id="expertise" class="ed-expertise"><h3>Expertise</h3><div>{expertise.items.map(item=><article><h4>{item.title}</h4><p>{item.description}</p></article>)}</div></div>
+    </section>
+    <section id="skills" class="ed-section">
+      <div class="ed-section-heading"><div><p class="ed-eyebrow">03 / What I work with</p><h2>Tools &amp; Skills</h2></div></div>
+      <div class="ed-skills">{skills.categories.map(category=><div class="ed-skill-row"><h3>{category.title}</h3><ul>{category.skills.map(skill=><li><img class:list={{'ed-mono':!skill.icon.startsWith('devicon:')}} src={withBase('/images/icons/'+skill.icon.replace(':','/')+'.svg')} alt="" width="24" height="24" loading="lazy"/><span>{skill.name}</span></li>)}</ul></div>)}</div>
+    </section>
+    <section id="contact" class="ed-section ed-contact">
+      <div><p class="ed-eyebrow">04 / Contact</p><h2>Let's talk.</h2><p>{personal.location}</p></div>
+      <div class="ed-contact-links">{socials.map(social=><a href={social.url} target="_blank" rel="noopener noreferrer">{social.label}<span aria-hidden="true">↗</span></a>)}<a href={withBase(personal.cv)} download><span>Download CV</span> <span aria-hidden="true">↓</span></a></div>
+    </section>
+  </main>
+  <footer class="ed-footer"><p>© {new Date().getFullYear()} {personal.name}. All rights reserved.</p><a href="#home">Back to top ↑</a></footer>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('.ed-gallery').forEach(gallery => {
+    const shots = [...gallery.querySelectorAll<HTMLImageElement>('.ed-gallery-images img')];
+    let active = 0;
+    gallery.querySelectorAll<HTMLButtonElement>('[data-step]').forEach(button => {
+      button.addEventListener('click',()=>{
+        active=(active+Number(button.dataset.step)+shots.length)%shots.length;
+        shots.forEach((shot,index)=>{shot.hidden=index!==active;});
+        gallery.querySelector('output')!.textContent = `${active+1} / ${shots.length}`;
+      });
+    });
+  });
+  document.getElementById('ed-theme')?.addEventListener('click',()=>{
+    const root=document.documentElement;
+    const theme=root.dataset.theme==='light'?'dark':'light';
+    root.dataset.theme=theme;
+    root.style.background=theme==='light'?'#f5f5f3':'#121416';
+    try {localStorage.setItem(root.dataset.themeKey || 'portfolio-theme',theme);}catch{}
+  });
+</script>

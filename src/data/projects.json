@@ -18,6 +18,7 @@
       "sliderImage": "/images/projects/carved-cover.png",
       "sliderOrder": 0,
       "backgroundImage": "/images/projects/carved-cover.png",
+      "youtubeId": "T5j-b9MD9IY",
       "images": [
         "/images/projects/carved-gameplay-1.png",
         "/images/projects/carved-gameplay-2.png",
@@ -28,6 +29,86 @@
       "link": "https://illoturbio19.itch.io/carved",
       "colorIcon": "simple-icons:unrealengine",
       "githubRepo": ""
+    },
+    {
+      "title": "Orbital Hopper",
+      "featured": true,
+      "company": "ENTI Project · 2024/2025",
+      "category": "games",
+      "description": "A fast-paced 2D endless runner built in Unity as a second-year ENTI project. Play as an astronaut escaping a black hole, jump between planets, collect coins to revive and chase a new personal best. Available in the browser and on Android.",
+      "tags": [
+        "Unity",
+        "2D",
+        "Endless Runner",
+        "Platformer",
+        "Space",
+        "Android",
+        "HTML5"
+      ],
+      "link": "https://penguinstudiosgames.itch.io/orbital-hopper",
+      "icon": "code-bracket-square",
+      "colorIcon": "simple-icons:unity",
+      "youtubeId": "cY2L_UFk2pc",
+      "images": [
+        "/images/projects/orbital-hopper-cover.png"
+      ],
+      "githubRepo": "",
+      "sliderOrder": 1,
+      "sliderImage": "/images/projects/orbital-hopper-cover.png",
+      "backgroundImage": "/images/projects/orbital-hopper-cover.png"
+    },
+    {
+      "title": "SDL Game - Retro Games",
+      "featured": true,
+      "company": "Team Project",
+      "category": "games",
+      "description": "A collaborative retro game project built with C++ and SDL. The code includes multiple gameplay scenes, enemy types, collisions, input and rendering managers, and XML level loading.",
+      "tags": [
+        "C++",
+        "SDL",
+        "Retro Games",
+        "Software Engineering"
+      ],
+      "link": "https://github.com/DaniCasasSantolaria/EnginyeriaDelSoftware_AA2_SDL",
+      "icon": "code-bracket-square",
+      "colorIcon": "devicon:cplusplus",
+      "images": [],
+      "githubRepo": "",
+      "sliderOrder": 2
+    },
+    {
+      "title": "Networked Game Shooter - UDP & TCP",
+      "featured": true,
+      "company": "Team Project",
+      "category": "networking",
+      "description": "A collaborative networked shooter built with C++. It brings together a UDP game client, a UDP server and a TCP server, with code for local and online players, lobbies and packet management.",
+      "tags": [
+        "C++",
+        "Shooter",
+        "UDP",
+        "TCP",
+        "Client–Server"
+      ],
+      "link": "https://github.com/DaniCasasSantolaria/AA3_JocsEnXarxaUDP_Client",
+      "icon": "code-bracket-square",
+      "colorIcon": "devicon:cplusplus",
+      "images": [],
+      "githubRepo": "",
+      "links": [
+        {
+          "label": "UDP Client · GitHub",
+          "url": "https://github.com/DaniCasasSantolaria/AA3_JocsEnXarxaUDP_Client"
+        },
+        {
+          "label": "UDP Server · GitHub",
+          "url": "https://github.com/DaniCasasSantolaria/AA3_JocsEnXarxaUDP_Servidor"
+        },
+        {
+          "label": "TCP Server · GitHub",
+          "url": "https://github.com/DaniCasasSantolaria/AA3_JocsEnXarxaTCP_Server"
+        }
+      ],
+      "sliderOrder": 3
     }
   ]
 }
