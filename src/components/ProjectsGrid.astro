@@ -73,10 +73,10 @@ const displayProjects = featuredOnly
                       ></div>
                     </div>
                   )}
-                  {project.images.map((src, index) => (
+                  {(project.images ?? []).map((src, index) => (
                     <img class="project-shot project-media" src={withBase(src)} alt={`${project.title} — Gameplay ${index + 1}`} hidden={Boolean(project.youtubeId) || index !== 0} loading={index === 0 ? "eager" : "lazy"} width="1280" height="720" />
                   ))}
-                  {(project.images.length + (project.youtubeId ? 1 : 0)) > 1 && (
+                  {(((project.images?.length ?? 0) + (project.youtubeId ? 1 : 0)) > 1) && (
                     <div class="shot-thumbnails" aria-label={`Screenshots for ${project.title}`}>
                       {project.youtubeId && (
                         <button
@@ -90,7 +90,7 @@ const displayProjects = featuredOnly
                           <span class="thumbnail-play" aria-hidden="true">▶</span>
                         </button>
                       )}
-                      {project.images.map((src, index) => (
+                      {(project.images ?? []).map((src, index) => (
                         <button
                           type="button"
                           class={`shot-thumbnail ${!project.youtubeId && index === 0 ? 'is-active' : ''}`}
