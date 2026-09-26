@@ -439,19 +439,19 @@ body.page-hidden * {
 }
 
 [data-theme="light"] #about {
-  background-color: #fcfcfc;
+  background-color: var(--bg-section);
 }
 
 [data-theme="light"] #projects {
-  background-color: #dbdfee;
+  background-color: var(--bg);
 }
 
 [data-theme="light"] .text-slate-300 {
-  color: rgb(80, 80, 102);
+  color: var(--text-muted);
 }
 
 [data-theme="light"] .text-white {
-  color: rgb(106, 106, 106);
+  color: var(--text);
 }
 
 [data-theme="light"] .cert-in-progress {
@@ -460,11 +460,11 @@ body.page-hidden * {
 }
 
 [data-theme="light"] .text-backdrop h1 {
-  color: var(--bg-input);
+  color: var(--text);
 }
 
 [data-theme="light"] p.text-base.text-slate-400.text-backdrop {
-  color: var(--bg-nav);
+  color: var(--text-muted);
 }
 
 /* ===== PRINT / RESUME ===== */

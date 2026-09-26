@@ -106,12 +106,7 @@ function safeJsonLd(obj: object): string {
     {personalData.twitter && <meta name="twitter:site"    content={personalData.twitter} />}
     {personalData.twitter && <meta name="twitter:creator" content={personalData.twitter} />}
 
-    <!-- Favicon: GIF first so animated-capable browsers prefer it -->
-    <link rel="icon" type="image/gif"  href={`${base}images/favicons/favicon.gif`} />
-    <link rel="icon"                   href={`${base}images/favicons/favicon.ico`} sizes="any" />
-    <link rel="icon" type="image/png" sizes="96x96"  href={`${base}images/favicons/favicon-96x96.png`} />
-    <link rel="icon" type="image/png" sizes="32x32"  href={`${base}images/favicons/favicon-32x32.png`} />
-    <link rel="icon" type="image/png" sizes="16x16"  href={`${base}images/favicons/favicon-16x16.png`} />
+    <link rel="icon" type="image/svg+xml" href={`${base}images/favicons/favicon.svg`} />
     <link rel="apple-touch-icon" sizes="180x180" href={`${base}images/favicons/apple-icon-180x180.png`} />
     <link rel="apple-touch-icon" sizes="152x152" href={`${base}images/favicons/apple-icon-152x152.png`} />
     <link rel="apple-touch-icon" sizes="144x144" href={`${base}images/favicons/apple-icon-144x144.png`} />

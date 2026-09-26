@@ -1,4 +1,8 @@
 {
+  "Home": {
+    "ca": "Inici",
+    "es": "Inicio"
+  },
   "About": {
     "ca": "Sobre mi",
     "es": "Sobre mí"
@@ -42,6 +46,14 @@
   "Game Developer": {
     "ca": "Desenvolupador de videojocs",
     "es": "Desarrollador de videojuegos"
+  },
+  "Game Developer & Gameplay Programmer": {
+    "ca": "Desenvolupador de videojocs i programador de gameplay",
+    "es": "Desarrollador de videojuegos y programador de gameplay"
+  },
+  "Game Developer Student": {
+    "ca": "Estudiant de desenvolupament de videojocs",
+    "es": "Estudiante de desarrollo de videojuegos"
   },
   "Download CV": {
     "ca": "Descarrega el CV",
@@ -103,6 +115,74 @@
     "ca": "Soc",
     "es": "Soy"
   },
+  "Game Development student": {
+    "ca": "estudiant de desenvolupament de videojocs",
+    "es": "estudiante de desarrollo de videojuegos"
+  },
+  "focused on": {
+    "ca": "centrat en",
+    "es": "centrado en"
+  },
+  ". I enjoy": {
+    "ca": ". M'agrada",
+    "es": ". Me gusta"
+  },
+  ". I enjoy solving technical problems, working with teams and turning shared ideas into playable prototypes.": {
+    "ca": ". M'agrada resoldre problemes tècnics, treballar en equip i convertir idees compartides en prototips jugables.",
+    "es": ". Me gusta resolver problemas técnicos, trabajar en equipo y convertir ideas compartidas en prototipos jugables."
+  },
+  "solving technical problems": {
+    "ca": "resoldre problemes tècnics",
+    "es": "resolver problemas técnicos"
+  },
+  "working with teams": {
+    "ca": "treballar en equip",
+    "es": "trabajar en equipo"
+  },
+  "and": {
+    "ca": "i",
+    "es": "y"
+  },
+  "turning shared ideas into playable prototypes": {
+    "ca": "convertir idees compartides en prototips jugables",
+    "es": "convertir ideas compartidas en prototipos jugables"
+  },
+  "with a strong interest in": {
+    "ca": "amb un gran interès en",
+    "es": "con un gran interés en"
+  },
+  "Game Design and Gameplay Programming": {
+    "ca": "el disseny de jocs i la programació de gameplay",
+    "es": "el diseño de juegos y la programación de gameplay"
+  },
+  ". I enjoy understanding how mechanics, levels and systems work together to create clear and engaging player experiences.": {
+    "ca": ". M'agrada entendre com les mecàniques, els nivells i els sistemes treballen conjuntament per crear experiències de joc clares i atractives.",
+    "es": ". Me gusta entender cómo las mecánicas, los niveles y los sistemas trabajan conjuntamente para crear experiencias de juego claras y atractivas."
+  },
+  "Throughout my studies, I have worked on several": {
+    "ca": "Durant els meus estudis, he treballat en diversos",
+    "es": "Durante mis estudios, he trabajado en varios"
+  },
+  "team-based prototypes": {
+    "ca": "prototips en equip",
+    "es": "prototipos en equipo"
+  },
+  ", contributing ideas, designing gameplay and levels, and implementing mechanics. These projects have taught me how to communicate, organize tasks and adapt my work to the needs of a team.": {
+    "ca": ", aportant idees, dissenyant el gameplay i els nivells, i implementant mecàniques. Aquests projectes m'han ensenyat a comunicar-me, organitzar tasques i adaptar la meva feina a les necessitats de l'equip.",
+    "es": ", aportando ideas, diseñando el gameplay y los niveles e implementando mecánicas. Estos proyectos me han enseñado a comunicarme, organizar tareas y adaptar mi trabajo a las necesidades del equipo."
+  },
+  "I like combining": {
+    "ca": "M'agrada combinar",
+    "es": "Me gusta combinar"
+  },
+  "creative thinking with technical problem-solving": {
+    "ca": "el pensament creatiu amb la resolució de problemes tècnics",
+    "es": "el pensamiento creativo con la resolución de problemas técnicos"
+  },
+  ", turning ideas into playable features and improving them through testing and iteration. I am motivated to keep learning, take on new challenges and continue growing as a game developer.": {
+    "ca": ", convertint idees en funcionalitats jugables i millorant-les mitjançant proves i iteracions. Estic motivat per continuar aprenent, afrontar nous reptes i seguir creixent com a desenvolupador de videojocs.",
+    "es": ", convirtiendo ideas en funcionalidades jugables y mejorándolas mediante pruebas e iteraciones. Estoy motivado para seguir aprendiendo, afrontar nuevos retos y continuar creciendo como desarrollador de videojuegos."
+  },
   "Game Developer and Technical Artist based in Barcelona": {
     "ca": "desenvolupador de videojocs i artista tècnic establert a Barcelona",
     "es": "desarrollador de videojuegos y artista técnico afincado en Barcelona"
@@ -142,6 +222,18 @@
   "Level Design": {
     "ca": "Disseny de nivells",
     "es": "Diseño de niveles"
+  },
+  "Game Design": {
+    "ca": "Disseny de videojocs",
+    "es": "Diseño de videojuegos"
+  },
+  "Game Programming": {
+    "ca": "Programació de videojocs",
+    "es": "Programación de videojuegos"
+  },
+  "Project Management": {
+    "ca": "Gestió de projectes",
+    "es": "Gestión de proyectos"
   },
   "Game & Software Programming": {
     "ca": "Programació de videojocs i programari",
@@ -258,6 +350,18 @@
   "Let's talk.": {
     "ca": "Parlem.",
     "es": "Hablemos."
+  },
+  "Feel free to contact me by email or find me on LinkedIn and GitHub.": {
+    "ca": "Pots contactar amb mi per correu electrònic o trobar-me a LinkedIn i GitHub.",
+    "es": "Puedes contactar conmigo por correo electrónico o encontrarme en LinkedIn y GitHub."
+  },
+  "Professional profile": {
+    "ca": "Perfil professional",
+    "es": "Perfil profesional"
+  },
+  "Projects and code": {
+    "ca": "Projectes i codi",
+    "es": "Proyectos y código"
   },
   "Where Else You Can Find Me:": {
     "ca": "També em pots trobar a:",
@@ -467,9 +571,85 @@
     "ca": "Idioma",
     "es": "Idioma"
   },
-  "I am a very enthusiastic person about new technologies. I love computer science and I am always interested in learning new things. I am hardworking and responsible.": {
-    "ca": "Soc una persona molt entusiasta de les noves tecnologies. M'encanta la informàtica i sempre m'interessa aprendre coses noves. Soc treballador i responsable.",
-    "es": "Soy una persona muy entusiasta de las nuevas tecnologías. Me encanta la informática y siempre me interesa aprender cosas nuevas. Soy trabajador y responsable."
+  "I'm a game development student focused on game design and gameplay programming. I enjoy solving technical problems, collaborating with teams and turning shared ideas into playable prototypes.": {
+    "ca": "Soc estudiant de desenvolupament de videojocs, centrat en el disseny de jocs i la programació de gameplay. M'agrada resoldre problemes tècnics, treballar en equip i convertir idees compartides en prototips jugables.",
+    "es": "Soy estudiante de desarrollo de videojuegos, centrado en el diseño de juegos y la programación de gameplay. Me gusta resolver problemas técnicos, trabajar en equipo y convertir ideas compartidas en prototipos jugables."
+  },
+  "I design gameplay mechanics and levels with a focus on clarity, pacing and player experience. I turn ideas into playable structures and refine them through testing and iteration.": {
+    "ca": "Dissenyo mecàniques de joc i nivells centrant-me en la claredat, el ritme i l'experiència del jugador. Converteixo idees en estructures jugables i les milloro mitjançant proves i iteracions.",
+    "es": "Diseño mecánicas de juego y niveles centrándome en la claridad, el ritmo y la experiencia del jugador. Convierto ideas en estructuras jugables y las mejoro mediante pruebas e iteraciones."
+  },
+  "I design": {
+    "ca": "Dissenyo",
+    "es": "Diseño"
+  },
+  "gameplay mechanics and levels": {
+    "ca": "mecàniques de joc i nivells",
+    "es": "mecánicas de juego y niveles"
+  },
+  "with a focus on clarity, pacing and player experience. I turn ideas into playable structures and refine them through testing and iteration.": {
+    "ca": "centrant-me en la claredat, el ritme i l'experiència del jugador. Converteixo idees en estructures jugables i les milloro mitjançant proves i iteracions.",
+    "es": "centrándome en la claridad, el ritmo y la experiencia del jugador. Convierto ideas en estructuras jugables y las mejoro mediante pruebas e iteraciones."
+  },
+  "I implement gameplay mechanics and systems using C++, C# and Blueprints, mainly in Unreal Engine and Unity. I enjoy solving technical problems and building reliable foundations for prototypes.": {
+    "ca": "Implemento mecàniques i sistemes de joc amb C++, C# i Blueprints, principalment a Unreal Engine i Unity. M'agrada resoldre problemes tècnics i crear bases sòlides per als prototips.",
+    "es": "Implemento mecánicas y sistemas de juego con C++, C# y Blueprints, principalmente en Unreal Engine y Unity. Me gusta resolver problemas técnicos y crear bases sólidas para los prototipos."
+  },
+  "I implement gameplay mechanics and systems using": {
+    "ca": "Implemento mecàniques i sistemes de joc amb",
+    "es": "Implemento mecánicas y sistemas de juego con"
+  },
+  "C++, C# and Blueprints": {
+    "ca": "C++, C# i Blueprints",
+    "es": "C++, C# y Blueprints"
+  },
+  ", mainly in Unreal Engine and Unity. I enjoy solving technical problems and building reliable foundations for prototypes.": {
+    "ca": ", principalment a Unreal Engine i Unity. M'agrada resoldre problemes tècnics i crear bases sòlides per als prototips.",
+    "es": ", principalmente en Unreal Engine y Unity. Me gusta resolver problemas técnicos y crear bases sólidas para los prototipos."
+  },
+  "I have organized tasks and coordinated work in team projects using tools such as Jira and GitHub. I value clear goals, realistic planning and keeping development visible to the whole team.": {
+    "ca": "He organitzat tasques i coordinat la feina en projectes d'equip amb eines com Jira i GitHub. Valoro els objectius clars, una planificació realista i que el desenvolupament sigui visible per a tot l'equip.",
+    "es": "He organizado tareas y coordinado el trabajo en proyectos de equipo con herramientas como Jira y GitHub. Valoro los objetivos claros, una planificación realista y que el desarrollo sea visible para todo el equipo."
+  },
+  "I have organized tasks and coordinated work in team projects using tools such as": {
+    "ca": "He organitzat tasques i coordinat la feina en projectes d'equip amb eines com",
+    "es": "He organizado tareas y coordinado el trabajo en proyectos de equipo con herramientas como"
+  },
+  "I have organized tasks and coordinated work in team projects using": {
+    "ca": "He organitzat tasques i coordinat la feina en projectes d'equip utilitzant",
+    "es": "He organizado tareas y coordinado el trabajo en proyectos de equipo utilizando"
+  },
+  "Scrum and sprint planning": {
+    "ca": "Scrum i la planificació de sprints",
+    "es": "Scrum y la planificación de sprints"
+  },
+  ", supported by Jira and GitHub. I understand how to apply this workflow to define clear goals, track progress and keep development visible to the whole team.": {
+    "ca": ", amb el suport de Jira i GitHub. Sé aplicar aquest flux de treball per definir objectius clars, seguir el progrés i mantenir el desenvolupament visible per a tot l'equip.",
+    "es": ", con el apoyo de Jira y GitHub. Sé aplicar este flujo de trabajo para definir objetivos claros, seguir el progreso y mantener el desarrollo visible para todo el equipo."
+  },
+  "Jira and GitHub": {
+    "ca": "Jira i GitHub",
+    "es": "Jira y GitHub"
+  },
+  ". I value clear goals, realistic planning and keeping development visible to the whole team.": {
+    "ca": ". Valoro els objectius clars, una planificació realista i que el desenvolupament sigui visible per a tot l'equip.",
+    "es": ". Valoro los objetivos claros, una planificación realista y que el desarrollo sea visible para todo el equipo."
+  },
+  "I have built prototypes with multidisciplinary teams, sharing ideas, communicating progress and adapting my work to project needs. I enjoy contributing, receiving feedback and helping the team move forward.": {
+    "ca": "He creat prototips amb equips multidisciplinaris, compartint idees, comunicant el progrés i adaptant la meva feina a les necessitats del projecte. M'agrada contribuir, rebre feedback i ajudar l'equip a avançar.",
+    "es": "He creado prototipos con equipos multidisciplinares, compartiendo ideas, comunicando el progreso y adaptando mi trabajo a las necesidades del proyecto. Me gusta contribuir, recibir feedback y ayudar al equipo a avanzar."
+  },
+  "I have built prototypes with": {
+    "ca": "He creat prototips amb",
+    "es": "He creado prototipos con"
+  },
+  "multidisciplinary teams": {
+    "ca": "equips multidisciplinaris",
+    "es": "equipos multidisciplinares"
+  },
+  ", sharing ideas, communicating progress and adapting my work to project needs. I enjoy contributing, receiving feedback and helping the team move forward.": {
+    "ca": ", compartint idees, comunicant el progrés i adaptant la meva feina a les necessitats del projecte. M'agrada contribuir, rebre feedback i ajudar l'equip a avançar.",
+    "es": ", compartiendo ideas, comunicando el progreso y adaptando mi trabajo a las necesidades del proyecto. Me gusta contribuir, recibir feedback y ayudar al equipo a avanzar."
   },
   "I have contributed to game projects through level design, combining creative ideas with the technical work involved in building a playable experience. I am continuing to develop these skills during my game development studies.": {
     "ca": "He participat en projectes de videojocs dissenyant nivells, combinant idees creatives amb el treball tècnic necessari per crear una experiència jugable. Continuo desenvolupant aquestes habilitats durant els meus estudis de videojocs.",
@@ -547,9 +727,29 @@
     "ca": "Error de xarxa. Comprova la connexió i torna-ho a provar.",
     "es": "Error de red. Comprueba la conexión y vuelve a intentarlo."
   },
-  "A suspense puzzle-platformer prototype built in Unreal Engine 5. Play as a puppet brought to life in a strange workshop, recover your friend's missing pieces and escape the puppeteer. I contributed to this team project as a Gameplay Programmer.": {
-    "ca": "Prototip de plataformes i trencaclosques de suspens creat amb Unreal Engine 5. Ets un titella que cobra vida en un taller estrany: recupera les peces de la teva amiga i escapa del titellaire. Vaig participar en aquest projecte d'equip com a programador de mecàniques de joc.",
-    "es": "Prototipo de plataformas y puzles de suspense creado con Unreal Engine 5. Eres una marioneta que cobra vida en un taller extraño: recupera las piezas de tu amiga y escapa del titiritero. Participé en este proyecto de equipo como programador de mecánicas de juego."
+  "A suspense puzzle-platformer prototype built in Unreal Engine. Play as a puppet brought to life in a strange workshop, recover your friend's missing pieces and escape the puppeteer. I contributed to this team project as a Gameplay Programmer.": {
+    "ca": "Prototip de plataformes i trencaclosques de suspens creat amb Unreal Engine. Ets un titella que cobra vida en un taller estrany: recupera les peces de la teva amiga i escapa del titellaire. Vaig participar en aquest projecte d'equip com a programador de mecàniques de joc.",
+    "es": "Prototipo de plataformas y puzles de suspense creado con Unreal Engine. Eres una marioneta que cobra vida en un taller extraño: recupera las piezas de tu amiga y escapa del titiritero. Participé en este proyecto de equipo como programador de mecánicas de juego."
+  },
+  "Producer": {
+    "ca": "Productor",
+    "es": "Productor"
+  },
+  "A suspense puzzle-platformer set in a mysterious workshop.": {
+    "ca": "Un joc de puzles i plataformes de suspens ambientat en un taller misteriós.",
+    "es": "Un juego de puzles y plataformas de suspense ambientado en un taller misterioso."
+  },
+  "A fast-paced endless runner through space.": {
+    "ca": "Un endless runner de ritme ràpid a través de l'espai.",
+    "es": "Un endless runner de ritmo rápido a través del espacio."
+  },
+  "Game Designer": {
+    "ca": "Dissenyador de videojocs",
+    "es": "Diseñador de videojuegos"
+  },
+  "Gameplay Programmer": {
+    "ca": "Programador de gameplay",
+    "es": "Programador de gameplay"
   },
   "Team Project · Gameplay Programmer": {
     "ca": "Projecte d'equip · Programador de mecàniques de joc",
@@ -663,6 +863,10 @@
     "ca": "Joc SDL - Jocs retro",
     "es": "Juego SDL - Juegos retro"
   },
+  "Introduction and featured work": {
+    "ca": "Presentació i projectes destacats",
+    "es": "Presentación y proyectos destacados"
+  },
   "Networked Game Shooter - UDP & TCP": {
     "ca": "Shooter en xarxa - UDP i TCP",
     "es": "Shooter en red - UDP y TCP"
@@ -674,6 +878,10 @@
   "Platformer": {
     "ca": "Plataformes",
     "es": "Plataformas"
+  },
+  "3D Puzzle–Platforming": {
+    "ca": "Puzles i plataformes 3D",
+    "es": "Puzles y plataformas 3D"
   },
   "Space": {
     "ca": "Espai",

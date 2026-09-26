@@ -13,10 +13,9 @@ type ExpertiseItem = {
 const expertiseData = expertiseFile.items as ExpertiseItem[];
 ---
 
-<section id="expertise" class="py-20" style="scroll-margin-top: 80px;">
+<section id="expertise" class="compact-section" style="scroll-margin-top: 80px;">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14 reveal">
-      <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">What I do</p>
+    <div class="text-center mb-10 reveal">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Expertise</h2>
     </div>
 
@@ -34,7 +33,11 @@ const expertiseData = expertiseFile.items as ExpertiseItem[];
             <div class="expertise-copy">
 
               <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <p>
+                {item.description.split('**').map((part, index) =>
+                  index % 2 === 1 ? <strong>{part}</strong> : part
+                )}
+              </p>
             </div>
           </article>
         ))
@@ -167,6 +170,11 @@ const expertiseData = expertiseFile.items as ExpertiseItem[];
     color: var(--text-muted);
     font-size: 0.88rem;
     line-height: 1.65;
+  }
+
+  .expertise-copy p strong {
+    color: var(--text);
+    font-weight: 700;
   }
 
   :global([data-theme='light']) .expertise-card {

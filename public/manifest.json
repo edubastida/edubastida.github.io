@@ -1,10 +1,16 @@
 {
-  "name": "Astro Portfolio Theme",
-  "short_name": "PORTFOLIO",
+  "name": "Eduard Bastida Perez",
+  "short_name": "EB Portfolio",
   "display": "standalone",
   "theme_color": "#020617",
   "background_color": "#020617",
   "icons": [
+    {
+      "src": "/images/favicons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
     {
       "src": "\/images\/favicons\/android-icon-36x36.png",
       "sizes": "36x36",

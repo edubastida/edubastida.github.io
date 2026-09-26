@@ -1,6 +1,12 @@
 {
   "sections": [
     {
+      "label": "Home",
+      "shortLabel": "Home",
+      "href": "#home",
+      "desc": "Introduction and featured work"
+    },
+    {
       "label": "About",
       "shortLabel": "About",
       "href": "#about",

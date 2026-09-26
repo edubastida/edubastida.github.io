@@ -8,12 +8,16 @@
       "title": "Game Development",
       "skills": [
         {
+          "name": "Unreal Engine",
+          "icon": "simple-icons:unrealengine"
+        },
+        {
           "name": "Unity",
           "icon": "simple-icons:unity"
         },
         {
-          "name": "Unreal Engine",
-          "icon": "simple-icons:unrealengine"
+          "name": "Game Design",
+          "icon": "lucide:gamepad-2"
         },
         {
           "name": "Level Design",
@@ -33,16 +37,12 @@
           "icon": "devicon:cplusplus"
         },
         {
-          "name": "JavaScript",
-          "icon": "devicon:javascript"
-        },
-        {
-          "name": "Java",
-          "icon": "devicon:java"
-        },
-        {
           "name": "Python",
           "icon": "devicon:python"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "devicon:javascript"
         }
       ]
     },
@@ -50,16 +50,16 @@
       "title": "3D, Video & Design",
       "skills": [
         {
-          "name": "3ds Max",
-          "icon": "devicon:threedsmax"
-        },
-        {
           "name": "Premiere Pro",
           "icon": "devicon:premierepro"
         },
         {
           "name": "Photoshop",
           "icon": "devicon:photoshop"
+        },
+        {
+          "name": "3ds Max",
+          "icon": "devicon:threedsmax"
         }
       ]
     },
@@ -67,20 +67,24 @@
       "title": "Dev & Workflow Tools",
       "skills": [
         {
-          "name": "Git",
-          "icon": "devicon:git"
+          "name": "Visual Studio",
+          "icon": "devicon:visualstudio"
+        },
+        {
+          "name": "Jira",
+          "icon": "devicon:jira"
         },
         {
           "name": "GitHub",
           "icon": "simple-icons:github"
         },
         {
-          "name": "Visual Studio",
-          "icon": "devicon:visualstudio"
+          "name": "Git",
+          "icon": "devicon:git"
         },
         {
-          "name": "Visual Studio Code",
-          "icon": "devicon:vscode"
+          "name": "Trello",
+          "icon": "devicon:trello"
         }
       ]
     },

@@ -165,6 +165,8 @@ export interface ProjectEntry {
   company: string;
   category: string;
   description: string;
+  shortDescription?: string;
+  roles?: string[];
   tags: string[];
   icon: string;
   featuredImage?: string;

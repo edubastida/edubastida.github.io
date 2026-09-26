@@ -1,28 +1,28 @@
 {
   "items": [
     {
-      "key": "level-design",
+      "key": "game-design",
       "icon": "sparkles",
-      "title": "Level Design",
-      "description": "I have contributed to game projects through level design, combining creative ideas with the technical work involved in building a playable experience. I am continuing to develop these skills during my game development studies."
+      "title": "Game Design",
+      "description": "I design **gameplay mechanics and levels** with a focus on clarity, pacing and player experience. I turn ideas into playable structures and refine them through testing and iteration."
     },
     {
-      "key": "programming",
+      "key": "game-programming",
       "icon": "code-bracket-square",
-      "title": "Game & Software Programming",
-      "description": "I have contributed programming work to team projects and worked as a developer at AdariaGroup. My studies in application development have given me a foundation in Java, SQL, HTML and CSS that I bring to new development challenges."
+      "title": "Game Programming",
+      "description": "I implement gameplay mechanics and systems using **C++, C# and Blueprints**, mainly in Unreal Engine and Unity. I enjoy solving technical problems and building reliable foundations for prototypes."
+    },
+    {
+      "key": "project-management",
+      "icon": "calendar",
+      "title": "Project Management",
+      "description": "I have organized tasks and coordinated work in team projects using **Scrum and sprint planning**, supported by Jira and GitHub. I understand how to apply this workflow to define clear goals, track progress and keep development visible to the whole team."
     },
     {
       "key": "teamwork",
       "icon": "users",
       "title": "Team Collaboration",
-      "description": "I have worked with teams on projects, contributing to both level design and programming. I enjoy sharing ideas and learning from others, and bring initiative, responsibility and a willingness to help to the work we do together."
-    },
-    {
-      "key": "technical-support",
-      "icon": "server-stack",
-      "title": "Systems & Technical Support",
-      "description": "My background includes network systems administration studies, HelpDesk work at Escola Pia Sant Antoni and experience as a virtual reality lab technician. These experiences complement my game development studies with practical IT knowledge."
+      "description": "I have built prototypes with **multidisciplinary teams**, sharing ideas, communicating progress and adapting my work to project needs. I enjoy contributing, receiving feedback and helping the team move forward."
     }
   ]
 }

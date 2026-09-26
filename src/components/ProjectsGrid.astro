@@ -16,10 +16,9 @@ const displayProjects = featuredOnly
 
 ---
 
-<section id="projects" class="py-24 bg-slate-900/30" style="scroll-margin-top: 80px;">
+<section id="projects" class="compact-section" style="scroll-margin-top: 80px;">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-10 reveal">
-      <p class="text-sm font-semibold tracking-widest text-highlight uppercase mb-3">My work</p>
+    <div class="text-center mb-9 reveal">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold section-title">Featured Projects</h2>
     </div>
 
@@ -46,7 +45,15 @@ const displayProjects = featuredOnly
                   </p>
                 </div>
 
-                <h3 class="project-title text-lg font-bold mb-2 leading-snug">{project.title}</h3>
+                <h3 class="project-title text-2xl sm:text-3xl font-bold mb-2 leading-snug">{project.title}</h3>
+
+                {project.roles && project.roles.length > 0 && (
+                  <div class="project-roles" aria-label={`Roles in ${project.title}`}>
+                    {project.roles.map((role) => (
+                      <span class="role-tag">{role}</span>
+                    ))}
+                  </div>
+                )}
 
                 <p class="card-desc text-slate-400 text-sm leading-relaxed flex-1 mb-4">
                   {project.description}
@@ -439,6 +446,24 @@ const displayProjects = featuredOnly
   .project-title {
     color: var(--text);
     transition: color 0.35s ease;
+  }
+  .project-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 0.9rem;
+  }
+  .role-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 13%, transparent);
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.2;
   }
   .project-card:not(.has-bg):hover .project-title {
     color: var(--accent);

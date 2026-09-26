@@ -3,10 +3,10 @@
   "url": "https://edubastida.github.io",
   "addressLocality": "Barcelona",
   "addressRegion": "Catalonia",
-  "title": "Game Developer",
+  "title": "Game Developer Student",
   "photo": "/images/personal/portrait.png",
   "photoAlt": "Eduard Bastida Perez",
-  "email": "",
+  "email": "eduardbastidaperez@gmail.com",
   "phone": "",
   "phoneTel": "",
   "location": "Barcelona, Catalonia, Spain",
@@ -32,13 +32,13 @@
   "yearsExperience": "Developer at AdariaGroup (2020–2023), HelpDesk at Escola Pia Sant Antoni (2018–2019), and virtual reality lab technician (2026).",
   "volunteer": "",
   "portfolioUrl": "",
-  "heroRole": "Game Developer",
+  "heroRole": "Game Developer & Gameplay Programmer",
   "heroSocialLinks": [
     "github",
     "linkedin"
   ],
-  "bio": "I am a very enthusiastic person about new technologies. I love computer science and I am always interested in learning new things. I am hardworking and responsible.",
-  "aboutLong": "I'm a **Game Developer and Technical Artist based in Barcelona**, currently studying Design and Development of Video Games and Serious Games at ENTI-UB.\n\nI specialize in **Unreal Engine**, working across gameplay programming, systems development and technical art. I enjoy building robust gameplay systems and bridging programming and visuals through tools such as **Blueprints, C++, Niagara and Unreal's Material Editor**.\n\nI'm especially interested in **gameplay programming, technical art and systems-driven development**, and I'm always looking for new challenges where I can combine technical problem-solving with creative development.",
+  "bio": "I'm a Game Development student focused on Game Design and Gameplay Programming. I enjoy solving technical problems, working with teams and turning shared ideas into playable prototypes.",
+  "aboutLong": "I'm a **Game Development student** with a strong interest in **Game Design and Gameplay Programming**. I enjoy understanding how mechanics, levels and systems work together to create clear and engaging player experiences.\n\nThroughout my studies, I have worked on several **team-based prototypes**, contributing ideas, designing gameplay and levels, and implementing mechanics. These projects have taught me how to communicate, organize tasks and adapt my work to the needs of a team.\n\nI like combining **creative thinking with technical problem-solving**, turning ideas into playable features and improving them through testing and iteration. I am motivated to keep learning, take on new challenges and continue growing as a game developer.",
   "experienceEntries": [
     {
       "place": "Virtual reality laboratory",

@@ -5,14 +5,19 @@
       "title": "Carved",
       "featured": true,
       "resume": true,
-      "company": "Team Project · Gameplay Programmer",
+      "company": "Team Project",
       "category": "games",
-      "description": "A suspense puzzle-platformer prototype built in Unreal Engine 5. Play as a puppet brought to life in a strange workshop, recover your friend's missing pieces and escape the puppeteer. I contributed to this team project as a Gameplay Programmer.",
+      "description": "A suspense puzzle-platformer prototype built in Unreal Engine. Play as a puppet brought to life in a strange workshop, recover your friend's missing pieces and escape the puppeteer. I contributed to this team project as a Gameplay Programmer.",
+      "shortDescription": "A suspense puzzle-platformer set in a mysterious workshop.",
+      "roles": [
+        "Producer",
+        "Game Designer",
+        "Gameplay Programmer"
+      ],
       "tags": [
-        "Unreal Engine 5",
-        "Gameplay Programming",
-        "Puzzle Platformer",
-        "Prototype"
+        "Unreal Engine",
+        "3D Puzzle–Platforming",
+        "Atmospheric"
       ],
       "icon": "command-line",
       "sliderImage": "/images/projects/carved-cover.png",
@@ -33,17 +38,19 @@
     {
       "title": "Orbital Hopper",
       "featured": true,
-      "company": "ENTI Project · 2024/2025",
+      "company": "Team Project",
       "category": "games",
       "description": "A fast-paced 2D endless runner built in Unity as a second-year ENTI project. Play as an astronaut escaping a black hole, jump between planets, collect coins to revive and chase a new personal best. Available in the browser and on Android.",
+      "shortDescription": "A fast-paced endless runner through space.",
+      "roles": [
+        "Gameplay Programmer",
+        "Game Designer"
+      ],
       "tags": [
         "Unity",
-        "2D",
-        "Endless Runner",
-        "Platformer",
-        "Space",
-        "Android",
-        "HTML5"
+        "C#",
+        "Endless Runner–Platformer",
+        "Mobile"
       ],
       "link": "https://penguinstudiosgames.itch.io/orbital-hopper",
       "icon": "code-bracket-square",
@@ -58,16 +65,18 @@
       "backgroundImage": "/images/projects/orbital-hopper-cover.png"
     },
     {
-      "title": "SDL Game - Retro Games",
+      "title": "SDL Arcade Games",
       "featured": true,
       "company": "Team Project",
       "category": "games",
       "description": "A collaborative retro game project built with C++ and SDL. The code includes multiple gameplay scenes, enemy types, collisions, input and rendering managers, and XML level loading.",
+      "roles": [
+        "Gameplay Programmer"
+      ],
       "tags": [
-        "C++",
         "SDL",
-        "Retro Games",
-        "Software Engineering"
+        "C++",
+        "Arcade Games"
       ],
       "link": "https://github.com/DaniCasasSantolaria/EnginyeriaDelSoftware_AA2_SDL",
       "icon": "code-bracket-square",
@@ -77,17 +86,16 @@
       "sliderOrder": 2
     },
     {
-      "title": "Networked Game Shooter - UDP & TCP",
+      "title": "Networked Game Shooter",
       "featured": true,
       "company": "Team Project",
       "category": "networking",
       "description": "A collaborative networked shooter built with C++. It brings together a UDP game client, a UDP server and a TCP server, with code for local and online players, lobbies and packet management.",
       "tags": [
-        "C++",
-        "Shooter",
         "UDP",
         "TCP",
-        "Client–Server"
+        "Client–Server",
+        "Multiplayer"
       ],
       "link": "https://github.com/DaniCasasSantolaria/AA3_JocsEnXarxaUDP_Client",
       "icon": "code-bracket-square",
