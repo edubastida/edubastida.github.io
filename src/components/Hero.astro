@@ -11,8 +11,8 @@ const heroSocialLinks = getSocialLinks(
 );
 
 import { withBase } from '../lib/assetPath';
-import { existsSync, readdirSync } from 'node:fs';
-import { extname, join } from 'node:path';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 const augmented = await augmentProjectsWithImages(projectsData as unknown as ProjectEntry[]);
 // Use GitHub-fetched featuredImage when available; fall back to sliderImage from JSON.
@@ -23,27 +23,6 @@ const featuredProjects = augmented
   .sort((a, b) => (a.sliderOrder ?? 999) - (b.sliderOrder ?? 999));
 // Split "Frontend & Backend" so the "&" can be styled with a different colour in the template.
 const heroParts = personalData.heroRole.split(' & ');
-
-// CV auto-discovery: check personalData.cv first (external URL or local path),
-// then fall back to scanning public/cv/ for any PDF/DOC/DOCX file.
-const cvValue = (personalData.cv ?? '').trim();
-const isExternalCv = /^https?:\/\//i.test(cvValue);
-const hasLocalCv =
-  cvValue.startsWith('/') &&
-  existsSync(join(process.cwd(), 'public', cvValue.replace(/^\//, '')));
-
-let discoveredCv = '';
-const cvPublicDir = join(process.cwd(), 'public', 'cv');
-if (!isExternalCv && !hasLocalCv && existsSync(cvPublicDir)) {
-  const allowedCvExt = new Set(['.pdf', '.doc', '.docx']);
-  const candidates = readdirSync(cvPublicDir)
-    .filter((f) => allowedCvExt.has(extname(f).toLowerCase()))
-    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
-  if (candidates.length > 0) discoveredCv = `/cv/${candidates[0]}`;
-}
-
-const cvHref = isExternalCv ? cvValue : hasLocalCv ? cvValue : discoveredCv;
-const hasCv = Boolean(cvHref);
 
 const photoValue = (personalData.photo ?? '').trim();
 const isExternalPhoto = /^https?:\/\//i.test(photoValue);
@@ -83,7 +62,7 @@ const hasPortrait =
     <div
       class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen lg:min-h-0 lg:py-32"
     >
-      <div class="order-2 lg:order-1 space-y-6 relative">
+      <div class="order-1 space-y-6 relative">
 
         <div class="reveal text-backdrop presentation-card" style="transition-delay: 0.1s;">
         {hasPortrait && (
@@ -129,16 +108,7 @@ const hasPortrait =
 
         <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 0.3s;">
           <a href="#contact" class="btn-primary text-center">Contact Me</a>
-          {hasCv ? (
-            <a
-              href={withBase(cvHref)}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-secondary text-center">Download CV</a>
-          ) : (
-            <button onclick="window.print()" class="btn-secondary text-center">Print Resume</button>
-          )}
+          <a href="#projects" class="btn-secondary text-center">View Projects</a>
         </div>
 
         <div class="flex items-center gap-6 reveal" style="transition-delay: 0.4s;">
@@ -160,7 +130,7 @@ const hasPortrait =
       </div>
 
       <div
-        class="order-1 lg:order-2 flex justify-center lg:justify-end reveal"
+        class="order-2 flex justify-center lg:justify-end reveal"
         style="transition-delay: 0.2s;"
       >
         <div

@@ -87,19 +87,6 @@
           "icon": "devicon:trello"
         }
       ]
-    },
-    {
-      "title": "Databases",
-      "skills": [
-        {
-          "name": "SQL / Databases",
-          "icon": "lucide:database"
-        },
-        {
-          "name": "PostgreSQL",
-          "icon": "devicon:postgresql"
-        }
-      ]
     }
   ]
 }
